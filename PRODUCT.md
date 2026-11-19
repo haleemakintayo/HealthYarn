@@ -21,7 +21,7 @@ HealthYarn enables users to ask everyday health questions out loud in Yorùbá, 
 
 ## Positioning
 
-Unlike generic chatbots or runtime LLM wrappers, HealthYarn never generates or rewrites medical advice at runtime: every answer heard or read is clinically pre-approved and pre-synthesised via offline batch TTS (`YarnGPT`), paired with an uncompromising red-flag safety gate and full offline topic playback.
+HealthYarn follows a **3-tier guardrailed architecture**: Tier 1 immediately intercepts urgent red-flag emergencies with a locked emergency alert and local clinic call buttons; Tier 2 matches questions against clinically pre-approved, pre-synthesised core FAQs (`YarnGPT` / `Spitch`); and Tier 3 provides strictly guardrailed, non-diagnostic AI general health guidance with on-demand ephemeral audio for valid health questions outside the core FAQ library.
 
 ## Operating Context
 
@@ -31,7 +31,7 @@ Unlike generic chatbots or runtime LLM wrappers, HealthYarn never generates or r
 
 ## Capabilities and Constraints
 
-- **Zero Runtime LLM Medical Generation**: Runtime AI is strictly limited to speech transcription and FAQ matching.
+- **3-Tier Guardrailed Guidance**: Tier 1 enforces deterministic + contextual red-flag triage; Tier 2 serves clinician-verified core FAQs with offline pre-recorded voice clips; Tier 3 handles valid out-of-FAQ health questions using strict non-diagnostic, non-prescriptive guardrails (no drug names or dosages) paired with ephemeral `POST /api/tts` synthesis and clear provenance badges (`Verified HealthYarn Guide` vs `AI General Health Info — consult a clinic`).
 - **No Guessing Below Threshold**: Below confidence threshold (`MATCH_THRESHOLD`) or narrow margin (`< 0.03`), present up to 3 candidate questions with audio previews instead of guessing.
 - **Privacy (NDPA 2023)**: No public user accounts, no third-party analytics SDKs, voice recordings discarded immediately in memory, and zero PII/IPs stored in `query_logs`.
 - **Content Safety**: Placeholder drafts (`[PLACEHOLDER – NOT REVIEWED]`) cannot be marked `published` unless seeded explicitly with `--demo`, which surfaces a persistent `"DEMO CONTENT"` banner.

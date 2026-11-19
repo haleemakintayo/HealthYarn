@@ -49,13 +49,13 @@
   },
   {
     "lang": "yo",
-    "pattern": "(giri|o n gbon|omode n gbon|iko giri|ko le ji|daku|ko riran|ko mi|emi re n ko|eje ninu oyun|eje n da.*oyun|ko le mu omu|o n bi gbogbo ohun|aya n ro mi|ogun apaju)",
+    "pattern": "(\\bgiri\\b|o n gbon|omode n gbon|iko giri|ko le ji|\\bdaku\\b|ko riran|ko le mi|ko ri emi mi|emi re n ko|eje ninu oyun|eje n da.*oyun|ko le mu omu|o n bi gbogbo ohun|aya n ro mi|ogun apaju)",
     "severity": "urgent",
     "status": "published"
   },
   {
     "lang": "pcm",
-    "pattern": "(body dey shake|pikin dey jerk|convulsion|bleed.*belle|blood dey comot.*belle|belle.*blood|no dey wake|e don faint|no fit breathe|breathe.*hard|no fit suck breast|dey vomit everything|chest dey pain|drink kerosene|drink bleach|too many drug)",
+    "pattern": "(body dey shake|pikin dey jerk|\\bconvulsion\\w*\\b|bleed.*belle|blood dey comot.*belle|blood.*from.*belle|no dey wake|e don faint|no fit breathe|breathe.*hard|no fit suck breast|dey vomit everything|chest dey pain|drink kerosene|drink bleach|too many drug)",
     "severity": "urgent",
     "status": "published"
   }

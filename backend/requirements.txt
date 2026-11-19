@@ -11,6 +11,7 @@ numpy>=1.26.0
 scikit-learn>=1.5.0
 spitch>=0.1.0
 httpx>=0.27.0
+google-genai>=3.2.0
 pytest>=8.0.0
 ruff>=0.6.0
 # Optional heavy ML dependencies for production LaBSE / HF ASR:

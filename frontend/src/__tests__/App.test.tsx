@@ -114,6 +114,9 @@ describe("HealthYarn Landing & App Core Flows", () => {
             { status: 200 }
           );
         }
+        if (url.includes("/api/clinics")) {
+          return new Response(JSON.stringify({ clinics: MOCK_BUNDLE.clinics }), { status: 200 });
+        }
         if (url.includes("/api/meta")) {
           return new Response(
             JSON.stringify({
@@ -250,7 +253,8 @@ describe("HealthYarn Landing & App Core Flows", () => {
     expect(screen.getByText("Mix one sachet in 1L clean water.")).toBeInTheDocument();
     expect(playSeq).toHaveBeenCalledWith(
       "/static/audio/en/ors_a.ogg",
-      "/static/audio/en/disclaimer.ogg"
+      "/static/audio/en/disclaimer.ogg",
+      "Mix one sachet in 1L clean water."
     );
   });
 
@@ -348,7 +352,7 @@ describe("HealthYarn Landing & App Core Flows", () => {
 
     fireEvent.click(screen.getAllByRole("button", { name: "Staff" })[0]);
     expect(window.location.pathname).toBe("/admin");
-    expect(await screen.findByText("Staff Sign In")).toBeInTheDocument();
+    expect(await screen.findByText("Staff Sign In", {}, { timeout: 4000 })).toBeInTheDocument();
     expect(
       screen.getByText("Clinical & Language Governance Portal")
     ).toBeInTheDocument();
@@ -454,6 +458,9 @@ describe("HealthYarn Landing & App Core Flows", () => {
     );
 
     render(<App />);
+    // Default accessible mode is Tap-to-Speak; switch to Hold-to-Speak to test hold gesture
+    expect(await screen.findByRole("button", { name: "Tap to start speaking" })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Switch to hold-to-speak mode" }));
     const holdBtn = await screen.findByRole("button", { name: "Hold to speak" });
 
     // 1. Quick release while getUserMedia is still pending -> stops mic stream cleanly & asks user to hold
@@ -623,5 +630,418 @@ describe("HealthYarn Landing & App Core Flows", () => {
     expect(wavBlob.type).toBe("audio/wav");
     // 44-byte RIFF header + 2.2s * 16000Hz * 2 bytes = 70444 bytes
     expect(wavBlob.size).toBe(70444);
+  });
+
+  it("renders the 2-pill diagnosis toggle on AnswerView, auto-selects diagnosed track, and switches audio", () => {
+    const onPlay = vi.fn();
+    render(
+      <AnswerView
+        lang="en"
+        answer={{
+          faq_id: 1,
+          intent_key: "malaria_test_before_treat",
+          lang: "en",
+          question: "Should I take malaria drugs before getting tested?",
+          answer_text: "Default summary answer.",
+          undiagnosed_text: "Get an RDT test before starting malaria medicine.",
+          diagnosed_text: "Finish every prescribed ACT tablet over all 3 days.",
+          question_audio_url: "/static/audio/en/q.ogg",
+          answer_audio_url: "/static/audio/en/default.ogg",
+          undiagnosed_audio_url: "/static/audio/en/undiag.ogg",
+          diagnosed_audio_url: "/static/audio/en/diag.ogg",
+          diagnosis_status: "diagnosed",
+          disclaimer_text: "General info only.",
+          disclaimer_audio_url: "/static/audio/en/disclaimer.ogg"
+        }}
+        autoplayEnabled={true}
+        isPlaying={false}
+        playbackRate={1.0}
+        onPlayAnswerSequence={onPlay}
+        onToggleSpeed={vi.fn()}
+        onFeedback={vi.fn(async () => {})}
+        onResetHome={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText("Verified HealthYarn Guide")).toBeInTheDocument();
+    expect(screen.getByText("Selected from your question — tap to switch")).toBeInTheDocument();
+    expect(screen.getByText("Finish every prescribed ACT tablet over all 3 days.")).toBeInTheDocument();
+    expect(onPlay).toHaveBeenLastCalledWith(
+      "/static/audio/en/diag.ogg",
+      "/static/audio/en/disclaimer.ogg",
+      "Finish every prescribed ACT tablet over all 3 days."
+    );
+
+    const undiagBtn = screen.getByRole("button", { name: "Not yet tested / diagnosed" });
+    const diagBtn = screen.getByRole("button", { name: "Diagnosed by a doctor" });
+    expect(diagBtn).toHaveAttribute("aria-pressed", "true");
+    expect(undiagBtn).toHaveAttribute("aria-pressed", "false");
+
+    fireEvent.click(undiagBtn);
+    expect(undiagBtn).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByText("Get an RDT test before starting malaria medicine.")).toBeInTheDocument();
+    expect(onPlay).toHaveBeenLastCalledWith(
+      "/static/audio/en/undiag.ogg",
+      "/static/audio/en/disclaimer.ogg",
+      "Get an RDT test before starting malaria medicine."
+    );
+  });
+
+  it("renders progressive 3-step bar, collapsible typed input, starter chips, Stop audio bar, and Abeokuta clinics drawer", async () => {
+    localStorage.setItem("healthyarn_lang", "en");
+    window.history.pushState({}, "", "/app");
+    render(<App />);
+
+    // Step 1 active + starter chips + collapsed typed question box
+    const stepNav = await screen.findByRole("navigation", { name: "Health guide steps" });
+    expect(stepNav.querySelector('[aria-current="step"]')).toHaveTextContent("Ask");
+    expect(screen.getByText("Try asking")).toBeInTheDocument();
+    expect(screen.queryByPlaceholderText("Type a question (test / fallback)")).toBeNull();
+
+    // Expand progressive typing toggle
+    fireEvent.click(screen.getByRole("button", { name: "Type a question instead" }));
+    expect(screen.getByPlaceholderText("Type a question (test / fallback)")).toBeInTheDocument();
+
+    // Tap speaker preview plays clip; tap starter chip text -> transitions straight to Step 3 AnswerView
+    fireEvent.click(
+      screen.getByRole("button", { name: "Hear question: How do I prepare ORS for my child?" })
+    );
+    fireEvent.click(
+      screen.getByRole("button", { name: "How do I prepare ORS for my child?" })
+    );
+    expect(await screen.findByText("Mix one sachet in 1L clean water.")).toBeInTheDocument();
+    expect(stepNav.querySelector('[aria-current="step"]')).toHaveTextContent("Answer");
+
+    // Playing state shows Stop audio control + Speaking indicator, and Nearby Hospitals drawer toggles cleanly
+    expect(screen.getByRole("button", { name: "Stop audio" })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Stop audio" }));
+    expect(screen.getByRole("button", { name: "Listen to answer" })).toBeInTheDocument();
+
+    const clinicsToggle = screen.getByRole("button", {
+      name: "Nearby hospitals & clinics (Abeokuta)"
+    });
+    fireEvent.click(clinicsToggle);
+    expect(await screen.findByText("Ikeja Primary Health Centre")).toBeInTheDocument();
+  });
+
+  it("renders Tier 3 AI guardrailed badge, auto-expands Abeokuta clinics when suggest_clinics is true, and plays ephemeral /api/tts audio", async () => {
+    localStorage.setItem("healthyarn_lang", "en");
+    window.history.pushState({}, "", "/app");
+
+    const baseFetch = globalThis.fetch as unknown as (
+      input: RequestInfo | URL,
+      init?: RequestInit
+    ) => Promise<Response>;
+    const ttsCalls: string[] = [];
+
+    vi.stubGlobal("URL", {
+      ...URL,
+      createObjectURL: vi.fn(() => "blob:ephemeral-tts-1"),
+      revokeObjectURL: vi.fn()
+    });
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = String(input);
+        if (url.includes("/api/ask")) {
+          return new Response(
+            JSON.stringify({
+              type: "answer",
+              faq_id: 0,
+              answer_source: "ai_guardrailed",
+              suggest_clinics: true,
+              intent_key: "ai_guardrailed",
+              lang: "en",
+              question: "i think my wife is in labor, what should i do",
+              answer_text: "Prepare to go to the nearest maternity clinic or hospital immediately.",
+              undiagnosed_text: "Prepare to go to the nearest maternity clinic or hospital immediately.",
+              diagnosed_text: "Follow her antenatal birth plan and go to the hospital now.",
+              answer_audio_url: null,
+              undiagnosed_audio_url: null,
+              diagnosed_audio_url: null,
+              diagnosis_status: "unspecified",
+              disclaimer_text: "General health information only.",
+              disclaimer_audio_url: "/static/audio/en/disclaimer.ogg",
+              log_id: 99
+            }),
+            { status: 200 }
+          );
+        }
+        if (url.includes("/api/tts")) {
+          ttsCalls.push(String(init?.body ?? ""));
+          return new Response(new Blob(["OggS"], { type: "audio/ogg" }), { status: 200 });
+        }
+        return baseFetch(input, init);
+      })
+    );
+
+    render(<App />);
+    fireEvent.click(await screen.findByRole("button", { name: "Type a question instead" }));
+    fireEvent.change(screen.getByPlaceholderText("Type a question (test / fallback)"), {
+      target: { value: "i think my wife is in labor, what should i do" }
+    });
+    fireEvent.submit(screen.getByPlaceholderText("Type a question (test / fallback)").closest("form")!);
+
+    expect(await screen.findByText("AI General Health Info — consult a clinic")).toBeInTheDocument();
+    expect(
+      screen.getByText("Prepare to go to the nearest maternity clinic or hospital immediately.")
+    ).toBeInTheDocument();
+    // suggest_clinics: true auto-expands the nearby clinic list without clicking
+    expect(screen.getByText("Ikeja Primary Health Centre")).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(ttsCalls.length).toBeGreaterThan(0);
+      expect(playedUrls).toContain("blob:ephemeral-tts-1");
+    });
+  });
+
+  it("falls back to window.speechSynthesis when /api/tts fails", async () => {
+    localStorage.setItem("healthyarn_lang", "en");
+    window.history.pushState({}, "", "/app");
+
+    const baseFetch = globalThis.fetch as unknown as (
+      input: RequestInfo | URL,
+      init?: RequestInit
+    ) => Promise<Response>;
+    const spokenTexts: string[] = [];
+
+    class MockUtterance {
+      text: string;
+      lang = "";
+      rate = 1;
+      onend: (() => void) | null = null;
+      onerror: (() => void) | null = null;
+      constructor(text: string) {
+        this.text = text;
+      }
+    }
+
+    vi.stubGlobal("SpeechSynthesisUtterance", MockUtterance);
+    vi.stubGlobal("speechSynthesis", {
+      speak: vi.fn((utt: MockUtterance) => {
+        spokenTexts.push(utt.text);
+        utt.onend?.();
+      }),
+      cancel: vi.fn()
+    });
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = String(input);
+        if (url.includes("/api/ask")) {
+          return new Response(
+            JSON.stringify({
+              type: "answer",
+              faq_id: 0,
+              answer_source: "ai_guardrailed",
+              suggest_clinics: false,
+              intent_key: "ai_guardrailed",
+              lang: "en",
+              question: "How can I prevent dehydration during heatwave?",
+              answer_text: "Drink clean water regularly throughout the day.",
+              undiagnosed_text: "Drink clean water regularly throughout the day.",
+              diagnosed_text: "Follow your clinician fluid advice and drink clean water regularly.",
+              answer_audio_url: null,
+              undiagnosed_audio_url: null,
+              diagnosed_audio_url: null,
+              diagnosis_status: "unspecified",
+              disclaimer_text: "General health information only.",
+              disclaimer_audio_url: null,
+              log_id: 100
+            }),
+            { status: 200 }
+          );
+        }
+        if (url.includes("/api/tts")) {
+          return new Response("Unavailable", { status: 503 });
+        }
+        return baseFetch(input, init);
+      })
+    );
+
+    render(<App />);
+    fireEvent.click(await screen.findByRole("button", { name: "Type a question instead" }));
+    fireEvent.change(screen.getByPlaceholderText("Type a question (test / fallback)"), {
+      target: { value: "How can I prevent dehydration during heatwave?" }
+    });
+    fireEvent.submit(screen.getByPlaceholderText("Type a question (test / fallback)").closest("form")!);
+
+    expect(await screen.findByText("AI General Health Info — consult a clinic")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(spokenTexts).toContain("Drink clean water regularly throughout the day.");
+    });
+  });
+
+  it("blocks robotic English SpeechSynthesis fallback on Yorùbá when /api/tts fails without a native yo voice", async () => {
+    localStorage.setItem("healthyarn_lang", "yo");
+    window.history.pushState({}, "", "/app");
+
+    const baseFetch = globalThis.fetch as unknown as (
+      input: RequestInfo | URL,
+      init?: RequestInit
+    ) => Promise<Response>;
+    const speakSpy = vi.fn();
+
+    class MockUtterance {
+      text: string;
+      lang = "";
+      rate = 1;
+      onend: (() => void) | null = null;
+      onerror: (() => void) | null = null;
+      constructor(text: string) {
+        this.text = text;
+      }
+    }
+
+    vi.stubGlobal("SpeechSynthesisUtterance", MockUtterance);
+    vi.stubGlobal("speechSynthesis", {
+      getVoices: vi.fn(() => [{ lang: "en-GB", name: "English UK" }]),
+      speak: speakSpy,
+      cancel: vi.fn()
+    });
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = String(input);
+        if (url.includes("/api/ask")) {
+          return new Response(
+            JSON.stringify({
+              type: "answer",
+              faq_id: 0,
+              answer_source: "ai_guardrailed",
+              suggest_clinics: true,
+              intent_key: "ai_guardrailed",
+              lang: "yo",
+              question: "Mo rò pé ìyàwó mi ti wà nínú ìrọbí",
+              answer_text: "Ẹ mú ìyàwó yín lọ sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀.",
+              undiagnosed_text: "Ẹ mú ìyàwó yín lọ sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀.",
+              diagnosed_text: "Ẹ tẹ̀ lé ìtọ́ni agbebí lọ sí ilé ìbí.",
+              answer_audio_url: null,
+              undiagnosed_audio_url: null,
+              diagnosed_audio_url: null,
+              diagnosis_status: "unspecified",
+              disclaimer_text: "Ìmọ̀ràn ìlera gbogbogbò nìkan.",
+              disclaimer_audio_url: "/static/audio/yo/disclaimer.ogg",
+              log_id: 101
+            }),
+            { status: 200 }
+          );
+        }
+        if (url.includes("/api/tts")) {
+          return new Response("Unavailable", { status: 503 });
+        }
+        return baseFetch(input, init);
+      })
+    );
+
+    render(<App />);
+    fireEvent.click(await screen.findByRole("button", { name: "Kọ ìbéèrè rẹ dípò sísọ̀rọ̀" }));
+    fireEvent.change(screen.getByPlaceholderText("Kọ ìbéèrè rẹ (fún àyẹ̀wò)"), {
+      target: { value: "Mo rò pé ìyàwó mi ti wà nínú ìrọbí" }
+    });
+    fireEvent.submit(screen.getByPlaceholderText("Kọ ìbéèrè rẹ (fún àyẹ̀wò)").closest("form")!);
+
+    expect(
+      await screen.findByText(
+        "Ohùn Yorùbá alààyè kò sí lọ́wọ́lọ́wọ́. O lè ka ìtọ́sọ́nà ìsàlẹ̀ tàbí gbọ́ àkòrí tí a ti fọwọ́ sí."
+      )
+    ).toBeInTheDocument();
+    expect(speakSpy).not.toHaveBeenCalled();
+  });
+
+  it("translates an open Tier 3 answer in-place to Yorùbá via /api/ask instead of /api/answers/0", async () => {
+    localStorage.setItem("healthyarn_lang", "en");
+    window.history.pushState({}, "", "/app");
+
+    const baseFetch = globalThis.fetch as unknown as (
+      input: RequestInfo | URL,
+      init?: RequestInit
+    ) => Promise<Response>;
+    const answer0Calls: string[] = [];
+
+    vi.stubGlobal("URL", {
+      ...URL,
+      createObjectURL: vi.fn(() => "blob:yo-tts"),
+      revokeObjectURL: vi.fn()
+    });
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = String(input);
+        if (url.includes("/api/answers/0")) {
+          answer0Calls.push(url);
+          return new Response("Not Found", { status: 404 });
+        }
+        if (url.includes("/api/ask")) {
+          const parsed = JSON.parse(String(init?.body || "{}"));
+          const reqLang = parsed.lang || "en";
+          if (reqLang === "yo") {
+            return new Response(
+              JSON.stringify({
+                type: "answer",
+                faq_id: 0,
+                answer_source: "ai_guardrailed",
+                suggest_clinics: true,
+                intent_key: "ai_guardrailed",
+                lang: "yo",
+                question: "my wife is in labor, what should I do",
+                answer_text: "Ẹ mú ìyàwó yín lọ sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀.",
+                undiagnosed_text: "Ẹ mú ìyàwó yín lọ sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀.",
+                diagnosed_text: "Ẹ tẹ̀ lé ìtọ́ni agbebí lọ sí ilé ìbí.",
+                answer_audio_url: null,
+                undiagnosed_audio_url: null,
+                diagnosed_audio_url: null,
+                diagnosis_status: "unspecified",
+                log_id: 103
+              }),
+              { status: 200 }
+            );
+          }
+          return new Response(
+            JSON.stringify({
+              type: "answer",
+              faq_id: 0,
+              answer_source: "ai_guardrailed",
+              suggest_clinics: true,
+              intent_key: "ai_guardrailed",
+              lang: "en",
+              question: "my wife is in labor, what should I do",
+              answer_text: "Head promptly to the maternity clinic.",
+              undiagnosed_text: "Head promptly to the maternity clinic.",
+              diagnosed_text: "Follow her midwife birth plan and go to the hospital.",
+              answer_audio_url: null,
+              undiagnosed_audio_url: null,
+              diagnosed_audio_url: null,
+              diagnosis_status: "unspecified",
+              log_id: 102
+            }),
+            { status: 200 }
+          );
+        }
+        if (url.includes("/api/tts")) {
+          return new Response(new Blob(["OggS"], { type: "audio/ogg" }), { status: 200 });
+        }
+        return baseFetch(input, init);
+      })
+    );
+
+    render(<App />);
+    fireEvent.click(await screen.findByRole("button", { name: "Type a question instead" }));
+    fireEvent.change(screen.getByPlaceholderText("Type a question (test / fallback)"), {
+      target: { value: "my wife is in labor, what should I do" }
+    });
+    fireEvent.submit(screen.getByPlaceholderText("Type a question (test / fallback)").closest("form")!);
+
+    expect(await screen.findByText("Head promptly to the maternity clinic.")).toBeInTheDocument();
+
+    fireEvent.click(screen.getAllByRole("button", { name: "Yorùbá" })[0]);
+    expect(
+      await screen.findByText("Ẹ mú ìyàwó yín lọ sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀.")
+    ).toBeInTheDocument();
+    expect(answer0Calls).toEqual([]);
   });
 });

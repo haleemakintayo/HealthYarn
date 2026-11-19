@@ -47,8 +47,12 @@ class Translation(SQLModel, table=True):
     lang: str = Field(index=True)  # yo | ig | en
     question_text: str
     answer_text: str
+    undiagnosed_text: Optional[str] = None
+    diagnosed_text: Optional[str] = None
     question_audio_url: Optional[str] = None
     answer_audio_url: Optional[str] = None
+    undiagnosed_audio_url: Optional[str] = None
+    diagnosed_audio_url: Optional[str] = None
     audio_takes_json: Optional[str] = None  # JSON array of generated answer audio URLs
     voice_name: Optional[str] = None
     status: str = Field(default="draft", index=True)  # draft | clinical_ok | language_ok | published

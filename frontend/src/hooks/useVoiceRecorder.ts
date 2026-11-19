@@ -247,7 +247,7 @@ export function useVoiceRecorder(
 
         if (!cancelledRef.current) {
           const blob = new Blob(chunks, { type: finalType });
-          if (chunks.length === 0 || blob.size === 0 || rawElapsed < 0.25) {
+          if (chunks.length === 0 || blob.size === 0 || rawElapsed < 0.15) {
             setMicErrorCode("too_short");
             return;
           }

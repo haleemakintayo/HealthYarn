@@ -1,51 +1,51 @@
 [
   {
-    "name": "Ikeja Primary Health Centre",
-    "lga": "Ikeja",
-    "state": "Lagos",
+    "name": "Federal Medical Centre, Idi-Aba, Abeokuta",
+    "lga": "Abeokuta South",
+    "state": "Ogun",
     "phone": "+2348001122001",
-    "type": "Primary Health Centre",
-    "lat": 6.6018,
-    "lng": 3.3515
+    "type": "Federal Medical Centre",
+    "lat": 7.1433,
+    "lng": 3.3769
   },
   {
-    "name": "Surulere Randle General Hospital",
-    "lga": "Surulere",
-    "state": "Lagos",
+    "name": "State Hospital, Ijaiye, Abeokuta",
+    "lga": "Abeokuta South",
+    "state": "Ogun",
     "phone": "+2348001122002",
-    "type": "General Hospital",
-    "lat": 6.5015,
-    "lng": 3.3581
+    "type": "State Hospital",
+    "lat": 7.1520,
+    "lng": 3.3568
   },
   {
-    "name": "Onikan Primary Health Centre",
-    "lga": "Lagos Island",
-    "state": "Lagos",
+    "name": "Sacred Heart Hospital, Lantoro, Abeokuta",
+    "lga": "Abeokuta South",
+    "state": "Ogun",
     "phone": "+2348001122003",
-    "type": "Primary Health Centre",
-    "lat": 6.4474,
-    "lng": 3.4041
-  },
-  {
-    "name": "Agodi Primary Health Centre",
-    "lga": "Ibadan North",
-    "state": "Oyo",
-    "phone": "+2348001122004",
-    "type": "Primary Health Centre",
-    "lat": 7.4019,
-    "lng": 3.9142
-  },
-  {
-    "name": "Ring Road State Hospital",
-    "lga": "Ibadan South-West",
-    "state": "Oyo",
-    "phone": "+2348001122005",
     "type": "General Hospital",
-    "lat": 7.3622,
-    "lng": 3.8686
+    "lat": 7.1511,
+    "lng": 3.3636
   },
   {
-    "name": "Abeokuta South Comprehensive PHC",
+    "name": "Neuropsychiatric Hospital, Aro, Abeokuta",
+    "lga": "Abeokuta North",
+    "state": "Ogun",
+    "phone": "+2348001122004",
+    "type": "Specialist Hospital",
+    "lat": 7.1753,
+    "lng": 3.3189
+  },
+  {
+    "name": "Oba Ademola II Maternity Hospital, Ijemo, Abeokuta",
+    "lga": "Abeokuta South",
+    "state": "Ogun",
+    "phone": "+2348001122005",
+    "type": "Maternity & Children Hospital",
+    "lat": 7.1578,
+    "lng": 3.3522
+  },
+  {
+    "name": "Oke-Ilewo Comprehensive Primary Health Centre, Abeokuta",
     "lga": "Abeokuta South",
     "state": "Ogun",
     "phone": "+2348001122006",
@@ -54,57 +54,39 @@
     "lng": 3.3619
   },
   {
-    "name": "Asata Primary Health Centre",
-    "lga": "Enugu North",
-    "state": "Enugu",
+    "name": "Iberekodo Primary Health Centre, Abeokuta",
+    "lga": "Abeokuta North",
+    "state": "Ogun",
     "phone": "+2348001122007",
     "type": "Primary Health Centre",
-    "lat": 6.4494,
-    "lng": 7.5036
+    "lat": 7.1672,
+    "lng": 3.3375
   },
   {
-    "name": "Parklane Teaching Hospital Emergency",
-    "lga": "Enugu North",
-    "state": "Enugu",
+    "name": "Lafenwa Primary Health Centre, Abeokuta",
+    "lga": "Abeokuta North",
+    "state": "Ogun",
     "phone": "+2348001122008",
-    "type": "Specialist Hospital",
-    "lat": 6.4531,
-    "lng": 7.4945
+    "type": "Primary Health Centre",
+    "lat": 7.1640,
+    "lng": 3.3292
   },
   {
-    "name": "Awka South Central PHC",
-    "lga": "Awka South",
-    "state": "Anambra",
+    "name": "Kuto Primary Health Centre, Abeokuta",
+    "lga": "Abeokuta South",
+    "state": "Ogun",
     "phone": "+2348001122009",
     "type": "Primary Health Centre",
-    "lat": 6.2105,
-    "lng": 7.0723
+    "lat": 7.1396,
+    "lng": 3.3531
   },
   {
-    "name": "Owerri Municipal Primary Health Centre",
-    "lga": "Owerri Municipal",
-    "state": "Imo",
+    "name": "Adatan Primary Health Centre, Abeokuta",
+    "lga": "Abeokuta South",
+    "state": "Ogun",
     "phone": "+2348001122010",
     "type": "Primary Health Centre",
-    "lat": 5.4836,
-    "lng": 7.0333
-  },
-  {
-    "name": "Wuse District Hospital",
-    "lga": "AMAC",
-    "state": "FCT Abuja",
-    "phone": "+2348001122011",
-    "type": "General Hospital",
-    "lat": 9.0723,
-    "lng": 7.4728
-  },
-  {
-    "name": "Garki Primary Health Centre",
-    "lga": "AMAC",
-    "state": "FCT Abuja",
-    "phone": "+2348001122012",
-    "type": "Primary Health Centre",
-    "lat": 9.0338,
-    "lng": 7.4892
+    "lat": 7.1684,
+    "lng": 3.3679
   }
 ]

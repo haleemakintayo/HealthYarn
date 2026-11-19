@@ -115,6 +115,49 @@ export const CheckCircleIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) 
   </svg>
 );
 
+export const StopIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} {...baseProps}>
+    <rect x="6" y="6" width="12" height="12" rx="2" />
+  </svg>
+);
+
+export const KeyboardIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} {...baseProps}>
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="M6 8h.01" />
+    <path d="M10 8h.01" />
+    <path d="M14 8h.01" />
+    <path d="M18 8h.01" />
+    <path d="M8 12h.01" />
+    <path d="M12 12h.01" />
+    <path d="M16 12h.01" />
+    <path d="M7 16h10" />
+  </svg>
+);
+
+export const MapPinIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} {...baseProps}>
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+);
+
+export const ClipboardCheckIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} {...baseProps}>
+    <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+    <path d="m9 14 2 2 4-4" />
+  </svg>
+);
+
+export const HelpCircleIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
+  <svg viewBox="0 0 24 24" className={className} {...baseProps}>
+    <circle cx="12" cy="12" r="10" />
+    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+    <path d="M12 17h.01" />
+  </svg>
+);
+
 export const XCircleIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg viewBox="0 0 24 24" className={className} {...baseProps}>
     <circle cx="12" cy="12" r="10" />

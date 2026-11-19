@@ -7,6 +7,7 @@ import {
   askVoice,
   fetchAnswer,
   fetchBundle,
+  fetchClinics,
   fetchMeta,
   fetchTopics,
   sendFeedback
@@ -31,6 +32,7 @@ import { DemoBanner } from "./components/DemoBanner";
 import { SiteHeader, type NavRoute } from "./components/SiteHeader";
 import { LandingPage } from "./components/landing/LandingPage";
 import { LanguagePicker } from "./components/LanguagePicker";
+import { StepProgressBar } from "./components/StepProgressBar";
 import { HomeView } from "./components/HomeView";
 import { TopicDetailView } from "./components/TopicDetailView";
 import { AnswerView } from "./components/AnswerView";
@@ -146,6 +148,7 @@ export function App() {
 
   const [topics, setTopics] = useState<TopicSummary[]>([]);
   const [bundle, setBundle] = useState<BundleResponse | null>(null);
+  const [fallbackClinics, setFallbackClinics] = useState<Clinic[]>([]);
   const [welcomeAudioByLang, setWelcomeAudioByLang] = useState<
     Partial<Record<Lang, string | null>>
   >({});
@@ -212,12 +215,21 @@ export function App() {
           name: "answer",
           payload: {
             faq_id: res.faq_id,
-            intent_key: `faq_${res.faq_id}`,
+            answer_source: res.answer_source ?? "verified_faq",
+            suggest_clinics: Boolean(res.suggest_clinics),
+            intent_key: res.intent_key || `faq_${res.faq_id}`,
+            topic_slug: res.topic_slug,
+            topic_name: res.topic_name,
             lang,
             question: res.question,
             answer_text: res.answer_text,
+            undiagnosed_text: res.undiagnosed_text,
+            diagnosed_text: res.diagnosed_text,
             question_audio_url: null,
             answer_audio_url: res.answer_audio_url,
+            undiagnosed_audio_url: res.undiagnosed_audio_url,
+            diagnosed_audio_url: res.diagnosed_audio_url,
+            diagnosis_status: res.diagnosis_status,
             disclaimer_text: res.disclaimer_text,
             disclaimer_audio_url: res.disclaimer_audio_url,
             source_reference: res.source_reference,
@@ -312,6 +324,11 @@ export function App() {
         if (m.sample_audio) setSampleAudioByLang(m.sample_audio);
       })
       .catch(() => {});
+    fetchClinics()
+      .then((res) => {
+        if (active) setFallbackClinics(res.clinics);
+      })
+      .catch(() => {});
     return () => {
       active = false;
     };
@@ -374,11 +391,63 @@ export function App() {
   // Translate open Answer screen in-place whenever language switches
   const openAnswerFaqId = screen.name === "answer" ? screen.payload.faq_id : null;
   const openAnswerLang = screen.name === "answer" ? screen.payload.lang : null;
+  const openAnswerQuestion = screen.name === "answer" ? screen.payload.question : null;
+  const openAnswerSource = screen.name === "answer" ? screen.payload.answer_source : undefined;
+  const openAnswerDiagnosisStatus =
+    screen.name === "answer" ? screen.payload.diagnosis_status : undefined;
   useEffect(() => {
     if (routeMode !== "app" || openAnswerFaqId === null || openAnswerLang === lang) {
       return;
     }
     let active = true;
+    const isTier3 = openAnswerFaqId === 0 || openAnswerSource === "ai_guardrailed";
+    if (isTier3) {
+      if (!isOffline && openAnswerQuestion) {
+        askText(openAnswerQuestion, lang)
+          .then((res) => {
+            if (!active || res.type !== "answer") return;
+            setScreen((curr) =>
+              curr.name === "answer" &&
+              (curr.payload.faq_id === 0 || curr.payload.answer_source === "ai_guardrailed")
+                ? {
+                    name: "answer",
+                    payload: {
+                      faq_id: res.faq_id,
+                      answer_source: res.answer_source ?? "ai_guardrailed",
+                      suggest_clinics: Boolean(res.suggest_clinics),
+                      intent_key: res.intent_key || `faq_${res.faq_id}`,
+                      topic_slug: res.topic_slug,
+                      topic_name: res.topic_name,
+                      lang,
+                      question: res.question,
+                      answer_text: res.answer_text,
+                      undiagnosed_text: res.undiagnosed_text,
+                      diagnosed_text: res.diagnosed_text,
+                      question_audio_url: null,
+                      answer_audio_url: res.answer_audio_url,
+                      undiagnosed_audio_url: res.undiagnosed_audio_url,
+                      diagnosed_audio_url: res.diagnosed_audio_url,
+                      diagnosis_status:
+                        res.diagnosis_status && res.diagnosis_status !== "unspecified"
+                          ? res.diagnosis_status
+                          : openAnswerDiagnosisStatus,
+                      disclaimer_text: res.disclaimer_text,
+                      disclaimer_audio_url: res.disclaimer_audio_url,
+                      source_reference: res.source_reference,
+                      confidence: res.confidence,
+                      log_id: res.log_id
+                    }
+                  }
+                : curr
+            );
+          })
+          .catch(() => {});
+      }
+      return () => {
+        active = false;
+      };
+    }
+
     const cached = getCachedBundle(lang);
     if (cached) {
       for (const tp of cached.topics) {
@@ -395,8 +464,13 @@ export function App() {
               lang,
               question: hit.question,
               answer_text: hit.answer_text,
+              undiagnosed_text: hit.undiagnosed_text,
+              diagnosed_text: hit.diagnosed_text,
               question_audio_url: hit.question_audio_url,
               answer_audio_url: hit.answer_audio_url,
+              undiagnosed_audio_url: hit.undiagnosed_audio_url,
+              diagnosed_audio_url: hit.diagnosed_audio_url,
+              diagnosis_status: openAnswerDiagnosisStatus,
               source_reference: hit.source_reference,
               disclaimer_text: disc?.text,
               disclaimer_audio_url: disc?.audio_url ?? null,
@@ -414,7 +488,13 @@ export function App() {
           if (!active) return;
           setScreen((curr) =>
             curr.name === "answer" && curr.payload.faq_id === openAnswerFaqId
-              ? { name: "answer", payload: fresh }
+              ? {
+                  name: "answer",
+                  payload: {
+                    ...fresh,
+                    diagnosis_status: openAnswerDiagnosisStatus ?? fresh.diagnosis_status
+                  }
+                }
               : curr
           );
         })
@@ -423,7 +503,16 @@ export function App() {
     return () => {
       active = false;
     };
-  }, [isOffline, lang, openAnswerFaqId, openAnswerLang, routeMode]);
+  }, [
+    isOffline,
+    lang,
+    openAnswerDiagnosisStatus,
+    openAnswerFaqId,
+    openAnswerLang,
+    openAnswerQuestion,
+    openAnswerSource,
+    routeMode
+  ]);
 
   const persistLang = (nextLang: Lang) => {
     setLang(nextLang);
@@ -507,8 +596,13 @@ export function App() {
               lang,
               question: item.question,
               answer_text: item.answer_text,
+              undiagnosed_text: item.undiagnosed_text,
+              diagnosed_text: item.diagnosed_text,
               question_audio_url: item.question_audio_url,
               answer_audio_url: item.answer_audio_url,
+              undiagnosed_audio_url: item.undiagnosed_audio_url,
+              diagnosed_audio_url: item.diagnosed_audio_url,
+              diagnosis_status: "unspecified",
               source_reference: item.source_reference,
               disclaimer_text: disclaimer?.text,
               disclaimer_audio_url: disclaimer?.audio_url ?? null,
@@ -665,6 +759,22 @@ export function App() {
       </div>
 
       <div className="flex-1">
+        {(screen.name === "home" ||
+          screen.name === "topic" ||
+          screen.name === "unsure" ||
+          screen.name === "answer") && (
+          <StepProgressBar
+            lang={lang}
+            step={
+              screen.name === "answer"
+                ? 3
+                : screen.name === "topic" || screen.name === "unsure"
+                ? 2
+                : 1
+            }
+          />
+        )}
+
         {screen.name === "welcome" && (
           <LanguagePicker
             currentLang={hasChosenLang ? lang : null}
@@ -710,6 +820,8 @@ export function App() {
               audio.stop();
               setScreen({ name: "topic", slug });
             }}
+            onOpenQuestion={handleOpenQuestion}
+            onPlayClip={(url) => audio.playSequence([url])}
           />
         )}
 
@@ -738,16 +850,32 @@ export function App() {
             answer={screen.payload}
             autoplayEnabled={autoplayEnabled}
             isPlaying={audio.isPlaying}
+            isLoadingAudio={audio.isLoadingAudio}
+            audioNotice={audio.audioNotice}
+            activeAudioStage={audio.activeStage}
             playbackRate={audio.playbackRate}
-            onPlayAnswerSequence={(aUrl, dUrl) => audio.playSequence([aUrl, dUrl])}
+            clinics={bundle?.clinics?.length ? bundle.clinics : fallbackClinics}
+            onPlayAnswerSequence={(aUrl, dUrl, spokenText) =>
+              audio.playAnswerOrSpeak({
+                clipUrl: aUrl,
+                text: spokenText,
+                lang,
+                disclaimerUrl: dUrl
+              })
+            }
+            onStopAudio={audio.stop}
             onToggleSpeed={audio.toggleSpeed}
             onFeedback={async (rating) => {
               await sendFeedback({
                 log_id: screen.payload.log_id,
-                faq_id: screen.payload.faq_id,
+                faq_id: screen.payload.faq_id > 0 ? screen.payload.faq_id : undefined,
                 lang,
                 rating
               });
+            }}
+            onBrowseTopic={(slug) => {
+              audio.stop();
+              setScreen({ name: "topic", slug });
             }}
             onResetHome={() => {
               audio.stop();

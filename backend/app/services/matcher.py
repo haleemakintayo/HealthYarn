@@ -227,8 +227,10 @@ class FAQMatcher:
                 )
 
             a_clean = clean_indexed_text(tr.answer_text)
+            u_clean = clean_indexed_text(tr.undiagnosed_text or "")
+            d_clean = clean_indexed_text(tr.diagnosed_text or "")
             intent_words = active_faqs[tr.faq_id].intent_key.replace("_", " ")
-            combo_raw = f"{q_clean} {intent_words} {a_clean}"
+            combo_raw = f"{q_clean} {intent_words} {a_clean} {u_clean} {d_clean}"
             raw_combo, fold_combo = normalize_text(combo_raw)
             if fold_combo:
                 exp_c, toks_c = expand_and_stem(fold_combo)

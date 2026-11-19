@@ -28,6 +28,17 @@ def init_db(target_engine=None) -> None:
                 conn.execute(text("ALTER TABLE topics ADD COLUMN name_pcm VARCHAR DEFAULT ''"))
             if "desc_pcm" not in cols:
                 conn.execute(text("ALTER TABLE topics ADD COLUMN desc_pcm VARCHAR DEFAULT ''"))
+    if "translations" in insp.get_table_names():
+        tr_cols = {c["name"] for c in insp.get_columns("translations")}
+        with eng.begin() as conn:
+            for col_name in (
+                "undiagnosed_text",
+                "diagnosed_text",
+                "undiagnosed_audio_url",
+                "diagnosed_audio_url",
+            ):
+                if col_name not in tr_cols:
+                    conn.execute(text(f"ALTER TABLE translations ADD COLUMN {col_name} TEXT"))
 
 
 def get_session() -> Generator[Session, None, None]:

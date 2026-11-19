@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { t } from "../i18n";
 import type { Lang, QuestionSummary, TopicSummary } from "../types";
 import { ArrowLeftIcon, ChevronRightIcon, TopicIcon, VolumeIcon } from "./Icons";
@@ -18,29 +18,43 @@ export const TopicDetailView: React.FC<TopicDetailViewProps> = ({
   onSelectQuestion,
   onPlayQuestionAudio
 }) => {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    headingRef.current?.focus();
+  }, [topic.slug]);
+
   return (
-    <main className="max-w-2xl mx-auto px-4 py-6">
+    <main className="max-w-2xl mx-auto px-4 py-5">
       <button
         type="button"
         onClick={onBack}
         aria-label={t(lang, "backTopics")}
-        className="min-h-[48px] px-4 py-2 rounded-lg bg-surface border border-seam text-ink font-semibold inline-flex items-center gap-2 hover:bg-subtle transition-colors mb-6"
+        className="min-h-[48px] px-4 py-2 rounded-lg bg-surface border border-seam text-ink font-semibold inline-flex items-center gap-2 hover:bg-subtle transition-colors mb-5"
       >
         <ArrowLeftIcon className="w-5 h-5 text-viridian" />
         <span>{t(lang, "backTopics")}</span>
       </button>
 
-      <div className="flex items-start gap-3 mb-6">
+      <div className="flex items-start gap-3 mb-4">
         <div className="w-12 h-12 rounded-card bg-hy-sand flex items-center justify-center shrink-0 border border-seam">
           <TopicIcon icon={topic.icon} className="w-7 h-7" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-ink leading-tight">{topic.name}</h1>
+          <h1
+            ref={headingRef}
+            tabIndex={-1}
+            className="text-2xl font-bold text-ink leading-tight focus:outline-none"
+          >
+            {topic.name}
+          </h1>
           {topic.description && (
             <p className="text-ink-muted text-base mt-1 prose-measure">{topic.description}</p>
           )}
         </div>
       </div>
+
+      <p className="text-sm font-medium text-ink-muted mb-4">{t(lang, "topicTapHint")}</p>
 
       <ul className="space-y-3" aria-label={topic.name}>
         {topic.questions.map((q) => (

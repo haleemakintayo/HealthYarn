@@ -126,3 +126,15 @@ export async function askText(text: string, lang: Lang): Promise<AskResponse> {
   }
   return res.json();
 }
+
+export async function fetchTtsAudio(text: string, lang: Lang): Promise<Blob> {
+  const res = await fetch("/api/tts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text, lang })
+  });
+  if (!res.ok) {
+    throw new Error("TTS request failed");
+  }
+  return res.blob();
+}

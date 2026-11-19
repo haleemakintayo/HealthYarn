@@ -1,4 +1,5 @@
 export type Lang = "yo" | "pcm" | "en";
+export type DiagnosisStatus = "undiagnosed" | "diagnosed" | "unspecified";
 
 export interface QuestionSummary {
   faq_id: number;
@@ -23,8 +24,12 @@ export interface BundleItem {
   source_reference: string;
   question: string;
   answer_text: string;
+  undiagnosed_text?: string;
+  diagnosed_text?: string;
   question_audio_url: string | null;
   answer_audio_url: string | null;
+  undiagnosed_audio_url?: string | null;
+  diagnosed_audio_url?: string | null;
 }
 
 export interface BundleTopic {
@@ -69,16 +74,25 @@ export interface BundleResponse {
   audio_urls: string[];
 }
 
+export type AnswerSource = "verified_faq" | "ai_guardrailed";
+
 export interface AnswerPayload {
   faq_id: number;
+  answer_source?: AnswerSource;
+  suggest_clinics?: boolean;
   intent_key: string;
   topic_slug?: string;
   topic_name?: string;
   lang: Lang;
   question: string;
   answer_text: string;
+  undiagnosed_text?: string;
+  diagnosed_text?: string;
   question_audio_url: string | null;
   answer_audio_url: string | null;
+  undiagnosed_audio_url?: string | null;
+  diagnosed_audio_url?: string | null;
+  diagnosis_status?: DiagnosisStatus;
   source_reference?: string;
   disclaimer_text?: string;
   disclaimer_audio_url?: string | null;
@@ -97,9 +111,19 @@ export type AskResponse =
   | {
       type: "answer";
       faq_id: number;
+      answer_source?: AnswerSource;
+      suggest_clinics?: boolean;
+      intent_key?: string;
+      topic_slug?: string;
+      topic_name?: string;
       question: string;
       answer_text: string;
+      undiagnosed_text?: string;
+      diagnosed_text?: string;
       answer_audio_url: string | null;
+      undiagnosed_audio_url?: string | null;
+      diagnosed_audio_url?: string | null;
+      diagnosis_status?: DiagnosisStatus;
       disclaimer_text?: string;
       disclaimer_audio_url?: string | null;
       source_reference?: string;

@@ -23,6 +23,13 @@ class Settings(BaseSettings):
     SPITCH_API_KEY: str = ""
     YARNGPT_API_KEY: str = ""
     YARNGPT_BASE_URL: str = "https://api.yarngpt.ai"
+    TTS_PROVIDER_ORDER: str = "spitch,yarngpt"
+    TTS_YO_PROVIDER_ORDER: str = "spitch,yarngpt"
+    SPITCH_VOICE_YO: str = "sade"
+    YARNGPT_VOICE_YO: str = "wura"
+    TTS_ENABLE_SPITCH_TONE_MARK: bool = True
+    GEMINI_API_KEY: str = ""
+    GEMINI_MODEL: str = "gemini-3.5-flash-lite"
     EMBEDDING_MODEL: str = "sentence-transformers/LaBSE"
     MATCH_THRESHOLD: float = 0.62
     MATCH_MARGIN: float = 0.03

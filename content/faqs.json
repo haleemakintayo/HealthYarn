@@ -7,17 +7,29 @@
       "en": {
         "question": "Should I take malaria drugs before getting tested?",
         "answer": "Always get a rapid diagnostic test or blood test at a clinic or pharmacy before starting malaria medicine. Not every fever is malaria, and testing ensures you receive the right care.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have not been tested yet: do not start malaria tablets just by guessing. Always get a rapid diagnostic test (RDT) or blood smear at a clinic or pharmacy first, because many other fevers look like malaria. While going for the test, drink clean water and rest.",
+        "diagnosed_text": "If a doctor or clinic has already tested and diagnosed malaria: start your prescribed artemisinin-based (ACT) tablets promptly with food or a fatty drink if advised, complete every tablet over the full 3 days, and return to the clinic if fever lasts beyond 48 hours or danger signs appear.",
+        "undiagnosed_audio_url": "/static/audio/en/malaria_test_before_treat_answer_59bcecee.ogg",
+        "diagnosed_audio_url": "/static/audio/en/malaria_complete_act_dose_answer_44820385.ogg"
       },
       "yo": {
         "question": "Ṣé ó yẹ kí n lo oògùn ibà kí n tó ṣe àyẹ̀wò ẹ̀jẹ̀?",
         "answer": "Máa ṣe àyẹ̀wò ibà RDT tàbí àyẹ̀wò ẹ̀jẹ̀ ní ilé ìwòsàn kí o tó bẹ̀rẹ̀ oògùn ibà. Kì í ṣe gbogbo ìgbóná ara ni ó jẹ́ malárìà, àyẹ̀wò sì ń jẹ́ kí o gba ìtọ́jú tó tọ́.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí o kò bá tíì ṣe àyẹ̀wò rárá: má ṣe lo oògùn ibà lásán láì ṣàyẹ̀wò. Lọ sí ilé ìwòsàn tàbí ilé oògùn láti ṣe àyẹ̀wò ẹ̀jẹ̀ RDT kókó, nítorí kì í ṣe gbogbo ìgbóná ara ló jẹ́ malárìà. Máa mu omi mímọ́ dáadáa kí o sì sinmi.",
+        "diagnosed_text": "Tí dókítà bá ti ṣàyẹ̀wò tí wọ́n sì ti fìdí ibà múlẹ̀ fún ọ: bẹ̀rẹ̀ lílo oògùn ibà ACT tí wọ́n kọ fún ọ kíákíá, parí gbogbo oògùn náà láti ọjọ́ kínní dé kẹta kódà bí ara rẹ bá ti yá, kí o sì padà sí ilé ìwòsàn bí ibà kò bá lọ sílẹ̀ lẹ́yìn ọjọ́ méjì.",
+        "undiagnosed_audio_url": "/static/audio/yo/malaria_test_before_treat_answer_94b8c5f3.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/malaria_complete_act_dose_answer_109d7896.ogg"
       },
       "pcm": {
         "question": "I suppose take malaria drug before I do test?",
         "answer": "E good make you do malaria test first for clinic or pharmacy before you start any malaria drug. No be every hot body be malaria, so test go help doctor give you correct treatment.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If doctor never test you yet: no just guess swallow malaria drug. Carry body go clinic or pharmacy do rapid malaria test (RDT) or blood test first, because plenty other sickness dey bring hot body. As you dey go test, drink clean water well and rest.",
+        "diagnosed_text": "If doctor don test you confirm say na malaria: start the ACT malaria tablets wey dem give you straight, chop small before you swallow am if nurse talk so, finish every single tablet even if fever stop, and run back clinic if fever no go down after two days.",
+        "undiagnosed_audio_url": "/static/audio/pcm/malaria_test_before_treat_answer_85253675.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/malaria_complete_act_dose_answer_281c18eb.ogg"
       }
     },
     "samples": {
@@ -49,17 +61,29 @@
       "en": {
         "question": "Why must I finish all my malaria medicine even if I feel better?",
         "answer": "Finish every prescribed malaria tablet even after fever disappears. Stopping early leaves hidden parasites in your blood, causing the malaria to return and become harder to treat.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have not been tested by a clinician yet: before buying or finishing antimalarial packs on your own, get tested first so you know whether fever is truly malaria or another infection that needs different care.",
+        "diagnosed_text": "If a doctor diagnosed malaria and prescribed an ACT course: finish every single tablet on schedule even when fever disappears after day one. Stopping halfway leaves parasites in your blood, causing malaria to return stronger and harder to cure.",
+        "undiagnosed_audio_url": "/static/audio/en/malaria_test_before_treat_answer_59bcecee.ogg",
+        "diagnosed_audio_url": "/static/audio/en/malaria_complete_act_dose_answer_44820385.ogg"
       },
       "yo": {
         "question": "Kí ló dé tí mo gbọ́dọ̀ parí oògùn ibà mi bí ara mi bá ti yá?",
         "answer": "Parí gbogbo oògùn ibà tí wọ́n kọ fún ọ kódà nígbà tí ìgbóná ara bá ti lọ sílẹ̀. Dídáwọ́ rẹ̀ dúró kíákíá lè jẹ́ kí kòkòrò ibà ṣẹ́kù nínú ẹ̀jẹ̀, kí àrùn náà tún padà wá.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí dókítà kò bá tíì ṣàyẹ̀wò rẹ: kí o tó ra oògùn ibà fúnra rẹ, ṣe àyẹ̀wò ẹ̀jẹ̀ ní ilé ìwòsàn láti mọ̀ bóyá ibà gidi ni tàbí àìsàn mìíràn tí ó nílò ìtọ́jú ọ̀tọ̀.",
+        "diagnosed_text": "Tí dókítà bá ti fìdí ibà múlẹ̀ tí ó sì kọ oògùn ACT fún ọ: parí gbogbo oògùn náà ní àkókò rẹ̀ kódà nígbà tí ìgbóná ara bá ti lọ sílẹ̀. Dídáwọ́ rẹ̀ dúró lè jẹ́ kí kòkòrò ibà ṣẹ́kù nínú ẹ̀jẹ̀.",
+        "undiagnosed_audio_url": "/static/audio/yo/malaria_test_before_treat_answer_94b8c5f3.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/malaria_complete_act_dose_answer_109d7896.ogg"
       },
       "pcm": {
         "question": "Why I must finish all my malaria medicine even if body don strong?",
         "answer": "Abeg finish all the malaria tablets wey dem give you even when hot body don go. If you stop half-way, small malaria germs fit still dey your blood and the sickness go come back strong.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If doctor never test confirm sickness for you yet: no just buy malaria pack swallow on your own. Go clinic or chemist do malaria test first so you go know wetin really cause the fever.",
+        "diagnosed_text": "If doctor don test confirm malaria give you medicine: finish every single tablet wey dem write for you, even when hot body don stop. If you stop half-way, hidden malaria germs fit remain inside blood and bring the sickness back strong.",
+        "undiagnosed_audio_url": "/static/audio/pcm/malaria_test_before_treat_answer_85253675.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/malaria_complete_act_dose_answer_281c18eb.ogg"
       }
     },
     "samples": {
@@ -89,17 +113,29 @@
       "en": {
         "question": "How can my family prevent malaria at home?",
         "answer": "Sleep every night under a treated mosquito net, clear standing water around your compound, and fit window screens to keep mosquitoes out.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you feel well and have not been diagnosed: protect your household every night by sleeping under an insecticide-treated mosquito net, draining stagnant puddles around your home, and fitting window screens. If anyone develops fever, test promptly.",
+        "diagnosed_text": "If a family member is already diagnosed with malaria: continue sleeping under a treated net even while on treatment so mosquitoes do not carry the parasite from the sick person to other people in the home, and finish the prescribed course.",
+        "undiagnosed_audio_url": "/static/audio/en/malaria_mosquito_net_prevention_answer_55c77441.ogg",
+        "diagnosed_audio_url": "/static/audio/en/malaria_complete_act_dose_answer_44820385.ogg"
       },
       "yo": {
         "question": "Báwo ni ẹbí mi ṣe lè dènà àrùn ibà nílé?",
         "answer": "Sùn lábẹ́ àwọ̀n ẹ̀fọn tí a fi oògùn tọ́jú ní gbogbo alẹ́, rọ́ omi àdágún kúrò ní àyíká ilé, kí o sì fi àwọ̀n dí fèrèsé rẹ láti dènà ẹ̀fọn.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí kò bá sí ẹni tó ti ṣe àyẹ̀wò tàbí ṣàìsàn: dáàbò bo ẹbí rẹ ní gbogbo alẹ́ nípa sísùn lábẹ́ àwọ̀n ẹ̀fọn tí a fi oògùn tọ́jú, rírọ́ omi àdágún kúrò ní àyíká ilé, àti fífí àwọ̀n dí fèrèsé.",
+        "diagnosed_text": "Tí dókítà bá ti fìdí rẹ̀ múlẹ̀ pé ẹnì kan ní ibà: jẹ́ kí aláìsàn náà máa sùn lábẹ́ àwọ̀n ẹ̀fọn nígbà tí ó ń gba ìtọ́jú kí ẹ̀fọn má baà kó àrùn náà ràn àwọn ẹbí yòókù, kí ó sì parí oògùn rẹ̀.",
+        "undiagnosed_audio_url": "/static/audio/yo/malaria_mosquito_net_prevention_answer_0e0c6da4.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/malaria_complete_act_dose_answer_109d7896.ogg"
       },
       "pcm": {
         "question": "How my family fit prevent malaria for house?",
         "answer": "Make everybody sleep inside treated mosquito net every night, pour away stagnant water for compound, and put net for window so mosquito no go enter.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If nobody sick or test positive yet: protect your house every night—sleep inside treated mosquito net, clear stagnant water round compound, and cover windows with net. Anytime anybody get hot body, go test quick.",
+        "diagnosed_text": "If person for house don test positive for malaria: make the sick person and everybody still dey sleep inside treated net every night, so mosquito no go bite am carry the malaria share give other people, and make the person finish dem drugs.",
+        "undiagnosed_audio_url": "/static/audio/pcm/malaria_mosquito_net_prevention_answer_aede6c54.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/malaria_complete_act_dose_answer_281c18eb.ogg"
       }
     },
     "samples": {
@@ -129,17 +165,29 @@
       "en": {
         "question": "What should I do when someone starts having a fever and chills?",
         "answer": "Give plenty of clean drinking water, dress the person in light clothing, sponge with lukewarm water if uncomfortable, and visit the nearest health centre promptly for a check-up.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If a person has fever and chills but has not seen a doctor yet: give plenty of clean drinking water, dress them in light clothes, sponge with lukewarm (not ice-cold) water, and take them to a health centre promptly for diagnosis rather than guessing medicines.",
+        "diagnosed_text": "If a doctor has already diagnosed the cause of fever and given treatment: give prescribed medicines exactly on time, keep offering plenty of clean water and lukewarm sponging for comfort, and rush back to the clinic if convulsions, persistent vomiting, yellowing of eyes, or extreme weakness develops.",
+        "undiagnosed_audio_url": "/static/audio/en/malaria_fever_home_care_answer_fa39ad83.ogg",
+        "diagnosed_audio_url": "/static/audio/en/malaria_complete_act_dose_answer_44820385.ogg"
       },
       "yo": {
         "question": "Kí ni mo yẹ kí n ṣe tí ẹni kan bá ní ibà àti òtútù?",
         "answer": "Fún wọn ní omi mímọ́ mu déédéé, wọ aṣọ fẹ́lẹ́fẹ́lẹ́ fún wọn, fi aṣọ tó rọ̀ díẹ̀ pẹ̀lú omi wọọrọ nu ara wọn, kí o sì lọ sí ilé ìwòsàn tó súnmọ́ ní kíákíá.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí ẹni kan bá ní ibà àti òtútù tí kò sì tíì rí dókítà: fún un ní omi mímọ́ mu déédéé, wọ aṣọ fẹ́lẹ́fẹ́lẹ́ fún un, fi omi wọọrọ nu ara rẹ̀, kí o sì mú un lọ sí ilé ìwòsàn kíákíá fún àyẹ̀wò kíkún.",
+        "diagnosed_text": "Tí dókítà bá ti ṣàyẹ̀wò tó sì ti kọ oògùn fún ibà náà: fún aláìsàn ní oògùn rẹ̀ gẹ́gẹ́ bí ìlànà, máa fún un ní omi mímọ́ mu déédéé, kí o sì sáré lọ sí ilé ìwòsàn bí ìbì, ìgìrì, tàbí àìlera líle bá hàn.",
+        "undiagnosed_audio_url": "/static/audio/yo/malaria_fever_home_care_answer_4ef0ef27.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/malaria_complete_act_dose_answer_109d7896.ogg"
       },
       "pcm": {
         "question": "Wetin I go do when person start to get hot body and cold?",
         "answer": "Give the person clean water make dem drink well, wear light cloth for dem, use warm water wipe dem body small, and carry dem go clinic sharp-sharp for test.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If person just start hot body and cold and doctor never see am yet: give am clean water drink well, put light cloth, wipe body small with warm water, and carry am go health centre sharp-sharp for test instead of guessing medicine.",
+        "diagnosed_text": "If doctor don check am tell you wetin cause fever and write medicine: give the prescribed drugs on time, continue plenty clean water and light warm-water wipe, and rush go hospital immediately if eye turn yellow, person dey vomit everything, or body start to shake.",
+        "undiagnosed_audio_url": "/static/audio/pcm/malaria_fever_home_care_answer_e0f50aac.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/malaria_complete_act_dose_answer_281c18eb.ogg"
       }
     },
     "samples": {
@@ -168,17 +216,29 @@
       "en": {
         "question": "Can I have high blood pressure without feeling sick?",
         "answer": "Yes. High blood pressure often causes no obvious symptoms in the early stages, which is why regular blood pressure checks at a health centre or pharmacy are important for adults.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have never had a high blood pressure diagnosis: remember high BP is often silent with no headache or pain. Have your blood pressure checked routinely at a primary health centre or licensed pharmacy, even when you feel healthy.",
+        "diagnosed_text": "If a doctor has already diagnosed you with high blood pressure: never wait until you feel a headache or dizziness to check your BP or take your tablets—silent high BP damages the heart, brain, and kidneys over time when tablets are skipped.",
+        "undiagnosed_audio_url": "/static/audio/en/hypertension_no_symptoms_answer_fc477262.ogg",
+        "diagnosed_audio_url": "/static/audio/en/hypertension_daily_medication_answer_e34d570c.ogg"
       },
       "yo": {
         "question": "Ṣé ènìyàn lè ní ìfúnpá gíga láì rí àmì àìsàn kankan?",
         "answer": "Bẹ́ẹ̀ ni. Ìfúnpá gíga kì í sábà fi àmì kankan hàn ní àárọ̀, ìdí nìyí tí àyẹ̀wò ìfúnpá déédéé ní ilé ìwòsàn fi ṣe pàtàkì fún àgbàlagbà.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí dókítà kò bá tíì sọ pé o ní ìfúnpá gíga: rántí pé ìfúnpá gíga kì í sábà fi àmì hàn ní àárọ̀. Máa ṣe àyẹ̀wò ìfúnpá rẹ déédéé ní ilé ìwòsàn tàbí ilé oògùn kódà nígbà tí ara rẹ bá le.",
+        "diagnosed_text": "Tí dókítà bá ti fìdí rẹ̀ múlẹ̀ pé o ní ìfúnpá gíga: má ṣe dúró de orí fífọ́ tàbí òòyì kí o tó lo oògùn rẹ tàbí yẹ ìfúnpá wò; ìfúnpá gíga máa ń ṣe ọkàn àti kídìnrín ní ìjamba lọ́nà ìkọ̀kọ̀ bí a bá dá oògùn dúró.",
+        "undiagnosed_audio_url": "/static/audio/yo/hypertension_no_symptoms_answer_b1c6620f.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/hypertension_daily_medication_answer_68fbe949.ogg"
       },
       "pcm": {
         "question": "Person fit get high blood pressure even when e no feel sick?",
         "answer": "Yes o. High BP no dey show face early at all. Plenty people dey walk about with high BP without headache or pain, na why e good make you dey check your BP regular for clinic.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If doctor never tell you before say you get high BP: know say high blood pressure no dey make noise early—person no must get headache. Go clinic or pharmacy check your BP regular even when you feel fine.",
+        "diagnosed_text": "If doctor don check confirm say you get high BP: no wait until headache catch you before you swallow your medicine or check reading. Silent high BP fit spoil heart and kidney quietly if person dey skip drug.",
+        "undiagnosed_audio_url": "/static/audio/pcm/hypertension_no_symptoms_answer_47ba2f3b.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/hypertension_daily_medication_answer_e67c9ba7.ogg"
       }
     },
     "samples": {
@@ -208,17 +268,29 @@
       "en": {
         "question": "Can I stop taking my blood pressure medicine once my reading becomes normal?",
         "answer": "No. Your blood pressure stays normal because the medicine is working. Never stop or change prescribed blood pressure tablets without talking to your doctor or nurse.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have not been diagnosed by a doctor: do not borrow someone else's blood pressure tablets if a single high reading shows up—get a proper clinical evaluation first so the doctor can confirm and pick a safe plan for you.",
+        "diagnosed_text": "If a doctor diagnosed high blood pressure and prescribed daily tablets: keep taking your medicine every day even when your reading looks normal. Your BP is controlled because the tablets are working—never stop without speaking to your clinician.",
+        "undiagnosed_audio_url": "/static/audio/en/hypertension_no_symptoms_answer_fc477262.ogg",
+        "diagnosed_audio_url": "/static/audio/en/hypertension_daily_medication_answer_e34d570c.ogg"
       },
       "yo": {
         "question": "Ṣé mo lè dáwọ́ oògùn ìfúnpá dúró tí ìfúnpá mi bá ti dín kù?",
         "answer": "Rárá. Oògùn náà ló mú kí ìfúnpá rẹ rọ̀ sílẹ̀. Má ṣe dáwọ́ oògùn ìfúnpá dúró tàbí yí i padà láì bá dókítà tàbí nọ́ọ̀sì sọ̀rọ̀.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí dókítà kò bá tíì ṣàyẹ̀wò rẹ: má ṣe ya oògùn ìfúnpá ẹlòmíràn lò bí àyẹ̀wò kan bá ga díẹ̀; rí dókítà fún ìdánwò tó péye àti ìtọ́jú tó bójú mu.",
+        "diagnosed_text": "Tí dókítà bá ti fìdí ìfúnpá gíga múlẹ̀ tí ó sì kọ oògùn oloojọ́ fún ọ: máa lo oògùn rẹ lójoojúmọ́ kódà nígbà tí ìfúnpá bá ti wálẹ̀ dáadáa. Oògùn náà ló ń ṣàkóso rẹ̀—má ṣe dá a dúró láì bá dókítà sọ̀rọ̀.",
+        "undiagnosed_audio_url": "/static/audio/yo/hypertension_no_symptoms_answer_b1c6620f.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/hypertension_daily_medication_answer_68fbe949.ogg"
       },
       "pcm": {
         "question": "I fit stop my BP drug once my blood pressure don come down normal?",
         "answer": "No stop am o! Na the drug dey hold your BP down make e normal. No ever stop or change your BP medicine without asking your doctor first.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If doctor never diagnose you with high BP yet: no ever borrow another person BP tablet drink even if one test show high number. Go clinic make doctor check you well before any medicine.",
+        "diagnosed_text": "If doctor don diagnose high BP give you daily tablets: continue to dey take your drug every single day even when machine show say your BP don normal. Na the tablet dey hold am down—no ever stop without asking your doctor.",
+        "undiagnosed_audio_url": "/static/audio/pcm/hypertension_no_symptoms_answer_47ba2f3b.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/hypertension_daily_medication_answer_e67c9ba7.ogg"
       }
     },
     "samples": {
@@ -247,17 +319,29 @@
       "en": {
         "question": "What everyday diet habits help keep blood pressure steady?",
         "answer": "Cut down on table salt, seasoning cubes, and salty dried meats. Eat fresh vegetables, beans, and fruits daily, and walk briskly for 30 minutes most days.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have not been diagnosed with high BP: keeping salt and seasoning cubes low, eating fresh vegetables, beans, and fruits daily, and walking briskly 30 minutes most days helps protect your blood pressure from rising.",
+        "diagnosed_text": "If you are already diagnosed with high blood pressure: low-salt meals and regular brisk walking work alongside—not instead of—your prescribed BP medicine. Avoid salty dried meats, limit maggi cubes, and keep taking your tablets daily.",
+        "undiagnosed_audio_url": "/static/audio/en/hypertension_salt_lifestyle_answer_b22a9353.ogg",
+        "diagnosed_audio_url": "/static/audio/en/hypertension_daily_medication_answer_e34d570c.ogg"
       },
       "yo": {
         "question": "Àwọn oúnjẹ àti ìgbésí ayé wo ló ń ran ìfúnpá lọ́wọ́?",
         "answer": "Dín iyọ̀ àti maggi kù nínú oúnjẹ, jẹ ẹ̀fọ́ tútù, ẹ̀wà, àti èso lóòjọ́, kí o sì máa rìn fún ìṣẹ́jú ọgbọ̀n déédéé láti ṣe ìrànwọ́ fún ìfúnpá tó dára.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí dókítà kò bá tíì sọ pé o ní ìfúnpá gíga: dídín iyọ̀ àti maggi kù, jíjẹ ẹ̀fọ́ tútù, ẹ̀wà, àti èso, àti rírìn fún ìṣẹ́jú ọgbọ̀n déédéé ń ṣe ìdènà ìfúnpá gíga.",
+        "diagnosed_text": "Tí dókítà bá ti fìdí ìfúnpá gíga múlẹ̀ fún ọ: dídín iyọ̀ kù àti eré ìdárayá rírìn ń ṣe àtìlẹyìn fún oògùn rẹ—kì í rọ́pò oògùn ilé ìwòsàn. Máa lo oògùn rẹ lójoojúmọ́ pẹ̀lú oúnjẹ tó ní iyọ̀ díẹ̀.",
+        "undiagnosed_audio_url": "/static/audio/yo/hypertension_salt_lifestyle_answer_bcabffda.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/hypertension_daily_medication_answer_68fbe949.ogg"
       },
       "pcm": {
         "question": "Which food and daily habit dey help keep BP steady?",
         "answer": "Reduce plenty salt and plenty maggi inside pot, chop fresh vegetables, beans, and fruits every day, and try waka briskly like thirty minutes most days.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If doctor never diagnose high BP for you yet: reducing plenty salt and maggi, chopping fresh vegetables, beans, and fruits, plus 30 minutes brisk waka most days go help protect your body from high BP.",
+        "diagnosed_text": "If doctor don diagnose you with high BP: eating small salt and daily brisk waka dey support your BP tablets—dem no replace your hospital drug. Avoid salty dry meat, cut maggi, and still take your daily medicine.",
+        "undiagnosed_audio_url": "/static/audio/pcm/hypertension_salt_lifestyle_answer_d6e68a09.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/hypertension_daily_medication_answer_e67c9ba7.ogg"
       }
     },
     "samples": {
@@ -286,17 +370,29 @@
       "en": {
         "question": "Is it safe to mix herbal agbo with prescribed blood pressure tablets?",
         "answer": "Be very careful: unmeasured herbal mixtures can clash with prescribed tablets or strain the kidneys and liver. Always tell your doctor before taking any herbal drink alongside hospital medicine.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have not seen a doctor yet: do not use unlabelled herbal mixtures (agbo) to self-treat headaches or suspected high blood pressure—some contain hidden stimulants or strain the kidneys. Get a proper clinic BP check first.",
+        "diagnosed_text": "If you are already taking prescribed blood pressure medicine: do not mix herbal agbo alongside your hospital tablets without telling your doctor, because herbal extracts can unpredictably crash your BP, block your tablets, or harm your kidneys and liver.",
+        "undiagnosed_audio_url": "/static/audio/en/hypertension_no_symptoms_answer_fc477262.ogg",
+        "diagnosed_audio_url": "/static/audio/en/hypertension_herbal_mix_warning_answer_c929996c.ogg"
       },
       "yo": {
         "question": "Ṣé ó dára láti mu àgbo pọ̀ mọ́ oògùn ìfúnpá ilé ìwòsàn?",
         "answer": "Ṣọ́ra dáadáa: dídàpọ̀ àgbo mọ́ oògùn òyìnbó lè ba oògùn jẹ́ tàbí fa ìṣòro fún kídìnrín àti ẹ̀dọ̀. Sọ fún dókítà rẹ kí o tó mu àgbo kankan pẹ̀lú oògùn ilé ìwòsàn.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí dókítà kò bá tíì ṣàyẹ̀wò rẹ: má ṣe mu àgbo láti tọ́jú orí fífọ́ tàbí ìfúnpá tí o fura sí lọ́nà ìkọ̀kọ̀, nítorí díẹ̀ lára wọn lè ba kídìnrín jẹ́. Lọ sí ilé ìwòsàn fún àyẹ̀wò ìfúnpá kókó.",
+        "diagnosed_text": "Tí o bá ti ń lo oògùn ìfúnpá láti ilé ìwòsàn: má ṣe da àgbo mọ́ oògùn dókítà rẹ láì sọ fún un, nítorí àgbo lè ba iṣẹ́ oògùn jẹ́ tàbí kó fa ìpalára fún kídìnrín àti ẹ̀dọ̀.",
+        "undiagnosed_audio_url": "/static/audio/yo/hypertension_no_symptoms_answer_b1c6620f.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/hypertension_herbal_mix_warning_answer_a8240672.ogg"
       },
       "pcm": {
         "question": "E good make I mix agbo with my hospital BP tablets?",
         "answer": "Abeg take am easy: some strong agbo fit fight your hospital medicine or stress your kidney and liver. Always tell your doctor before you drink any agbo join your BP tablets.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If doctor never check you yet: no just take local agbo try cure headache or suspected high BP—plenty unmeasured herbs fit stress your kidney or hide true symptoms. Go clinic check your BP first.",
+        "diagnosed_text": "If you already dey take hospital BP tablets: no mix herbal agbo join your tablets without telling your doctor first. Some strong agbo fit clash with the hospital drug, scatter your BP reading, or stress your kidney and liver.",
+        "undiagnosed_audio_url": "/static/audio/pcm/hypertension_no_symptoms_answer_47ba2f3b.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/hypertension_herbal_mix_warning_answer_0f24535e.ogg"
       }
     },
     "samples": {
@@ -325,17 +421,29 @@
       "en": {
         "question": "How do I prepare ORS for my child?",
         "answer": "Wash your hands with soap and water. Empty one full sachet of standard ORS into one litre of clean drinking water (check the sachet label), stir until completely dissolved, and discard any leftover mixture after 24 hours.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If your child has loose stools and has not seen a doctor yet: start low-osmolarity ORS safely right away to prevent dehydration. Wash hands with soap, dissolve one whole standard ORS sachet in 1 litre of clean water (read the packet for exact volume), and seek clinic care promptly—especially if stools contain blood or fever is high.",
+        "diagnosed_text": "If a health worker has already assessed your child and prescribed ORS plus zinc: prepare fresh ORS every 24 hours in 1 litre of clean drinking water as shown on the sachet, give sips after every loose stool, and continue daily zinc tablets for the full prescribed days.",
+        "undiagnosed_audio_url": "/static/audio/en/ors_how_to_prepare_answer_17c9bc0c.ogg",
+        "diagnosed_audio_url": "/static/audio/en/ors_zinc_role_answer_f760e1cd.ogg"
       },
       "yo": {
         "question": "Báwo ni mo ṣe lè pò omi iyọ̀ ORS fún ọmọ mi?",
         "answer": "Fọ ọwọ́ rẹ̀ pẹ̀lú ọṣẹ àti omi. Tú àpò ORS kan pátápátá sínú lítà kan omi mímọ́ (wo ìtọ́nisọ́nà lórí àpò), rò ó kí ó yọ́ dáadáa, má sì lo èyí tó bá ju wákàtí mẹ́rìnlélógún lọ.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí ọmọ bá ń ya ìgbẹ́ gbuuru tí kò sì tíì rí dókítà: bẹ̀rẹ̀ sí í fún un ní omi ORS lẹ́sẹ̀kẹsẹ̀ kí omi má baà gbẹ nínú ara rẹ̀. Fọ ọwọ́ rẹ, tú àpò ORS kan sínú lítà kan omi mímọ́ (wo ìwé àpò), kí o sì mú un lọ sí ilé ìwòsàn bí ẹ̀jẹ̀ bá wà nínú ìgbẹ́ tàbí bí ibà bá gbé e.",
+        "diagnosed_text": "Tí oníṣẹ́ ìlerà bá ti yẹ ọmọ wò tí ó sì ti kọ ORS àti oògùn zinc fún un: máa pò omi ORS tuntun ní gbogbo wákàtí mẹ́rìnlélógún sínú lítà kan omi mímọ́, máa fún un lẹ́yìn ìgbẹ́ kọ̀ọ̀kan, kí o sì parí oògùn zinc rẹ̀.",
+        "undiagnosed_audio_url": "/static/audio/yo/ors_how_to_prepare_answer_63eefcfc.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/ors_zinc_role_answer_ab5d0d00.ogg"
       },
       "pcm": {
         "question": "How I go mix ORS water for my pikin?",
         "answer": "Wash your hand well with soap and clean water. Pour one full packet of ORS inside one litre of clean drinking water as dem write for the pack, turn am well until e melt finish, and throw away anything remain after 24 hours.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If pikin just start to purge and doctor never see am yet: mix ORS immediately make water no dry for im body. Wash hand with soap, empty one sachet inside 1 litre clean water (check pack rule), and carry pikin go clinic quick—especially if blood dey inside stool or body hot.",
+        "diagnosed_text": "If nurse or doctor don see pikin give ORS and zinc: always mix fresh ORS inside 1 litre clean water, throw remaining water after 24 hours, give pikin after every toilet, and make sure you finish the full zinc tablets wey dem give.",
+        "undiagnosed_audio_url": "/static/audio/pcm/ors_how_to_prepare_answer_7cfc8790.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/ors_zinc_role_answer_0fe4398c.ogg"
       }
     },
     "samples": {
@@ -367,17 +475,29 @@
       "en": {
         "question": "How should I give ORS if my child keeps stooling or vomiting?",
         "answer": "Offer small frequent sips from a clean cup or spoon after every loose stool instead of forcing a full cup at once. If the child vomits, wait ten minutes and continue slowly.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If the child has not been checked by a clinic yet: offer small frequent spoonfuls of ORS after every loose stool, wait 10 minutes if vomiting happens, and go straight to a clinic if the child cannot drink, has sunken eyes, cries without tears, or has very little urine.",
+        "diagnosed_text": "If a clinic has already evaluated your child for diarrhoea: continue giving small slow sips of ORS after each loose stool until diarrhoea stops, alongside prescribed zinc tablets, and return immediately if vomiting prevents keeping fluids down.",
+        "undiagnosed_audio_url": "/static/audio/en/ors_give_after_each_stool_answer_1a4306b5.ogg",
+        "diagnosed_audio_url": "/static/audio/en/ors_zinc_role_answer_f760e1cd.ogg"
       },
       "yo": {
         "question": "Báwo ni mo ṣe máa fún ọmọ ní ORS bí ó bá ń bì tàbí tí ìgbẹ́ gbuuru bá ń bá a lọ?",
         "answer": "Fún un ní ṣíbí díẹ̀díẹ̀ lẹ́yìn ìgbẹ́ kọ̀ọ̀kan dípò fífún un ní ife kan lẹ́ẹ̀kan ṣoṣo. Tí ọmọ bá bì, dúró fún ìṣẹ́jú mẹ́wàá kí o tó tún bẹ̀rẹ̀ díẹ̀díẹ̀.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí ilé ìwòsàn kò bá tíì yẹ ọmọ wò: fún un ní ṣíbí ORS díẹ̀díẹ̀ lẹ́yìn ìgbẹ́ kọ̀ọ̀kan; bí ó bá bì, dúró fún ìṣẹ́jú mẹ́wàá kí o tó tẹ̀síwájú. Sáré lọ sí ilé ìwòsàn bí ọmọ kò bá lè mu omi, bí ojú bá wọ̀, tàbí tí kò bá tọ̀.",
+        "diagnosed_text": "Tí dókítà bá ti yẹ ọmọ wò tẹ́lẹ̀: máa tẹ̀síwájú láti fún un ní ORS díẹ̀díẹ̀ lẹ́yìn ìgbẹ́ gbuuru kọ̀ọ̀kan títí ìgbẹ́ náà yóò fi dáwọ́ dúró, pẹ̀lú oògùn zinc tí wọ́n kọ, kí o sì padà sí ilé ìwòsàn bí ìbì kò bá jẹ́ kí ó mu omi.",
+        "undiagnosed_audio_url": "/static/audio/yo/ors_give_after_each_stool_answer_64134f35.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/ors_zinc_role_answer_ab5d0d00.ogg"
       },
       "pcm": {
         "question": "How I go give ORS if my pikin still dey purge or vomit?",
         "answer": "Give am small-small with clean spoon or cup every time the pikin toilet, no force full cup at once. If the pikin vomit, wait ten minutes first then start again slowly.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If doctor never check the pikin yet: use clean spoon give ORS small-small after every loose toilet; if e vomit, rest 10 minutes then continue slowly. Run go clinic sharp-sharp if pikin no fit drink, eye sink inside, or pikin no dey piss.",
+        "diagnosed_text": "If health worker don check the pikin already: continue small frequent spoonfuls of ORS after every toilet until purging stop, join the zinc tablets dem prescribe, and carry pikin back hospital straight if vomiting no allow water stay belly.",
+        "undiagnosed_audio_url": "/static/audio/pcm/ors_give_after_each_stool_answer_622375cb.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/ors_zinc_role_answer_0fe4398c.ogg"
       }
     },
     "samples": {
@@ -406,17 +526,29 @@
       "en": {
         "question": "Why do health workers give zinc together with ORS for child diarrhoea?",
         "answer": "Zinc tablets help shorten the duration and severity of diarrhoea episodes and strengthen the child's gut for the coming months when given for the full course advised by the clinic.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If your child has not seen a health worker yet: start ORS immediately for hydration, and visit a clinic or pharmacy to get the age-appropriate zinc tablet dose—do not give adult tablets or leftovers to a young child.",
+        "diagnosed_text": "If a health worker already prescribed zinc tablets alongside ORS: give one dose daily for the full 10 to 14 days advised, even if diarrhoea stops in two days. Zinc helps heal the gut lining and reduces future episodes.",
+        "undiagnosed_audio_url": "/static/audio/en/ors_how_to_prepare_answer_17c9bc0c.ogg",
+        "diagnosed_audio_url": "/static/audio/en/ors_zinc_role_answer_f760e1cd.ogg"
       },
       "yo": {
         "question": "Kí ló dé tí wọ́n fi máa ń fún ọmọ ní oògùn zinc pẹ̀lú ORS?",
         "answer": "Oògùn zinc ń ran ikùn ọmọ lọ́wọ́ láti dín ìgbẹ́ gbuuru kù ní kíákíá, ó sì ń fún ikùn ọmọ lágbára sí i nígbà tí wọ́n bá lò ó parí bí òṣìṣẹ́ ìlera ṣe sọ.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí oníṣẹ́ ìlerà kò bá tíì yẹ ọmọ wò: bẹ̀rẹ̀ omi ORS kíákíá, lẹ́yìn náà lọ sí ilé ìwòsàn tàbí ilé oògùn láti gba oògùn zinc tó bá ọjọ́-orí ọmọ mu—má ṣe fún ọmọ ní oògùn àgbàlagbà.",
+        "diagnosed_text": "Tí dókítà bá ti kọ oògùn zinc pẹ̀lú ORS fún ọmọ: fún un lójoojúmọ́ títí yóò fi parí gbogbo ọjọ́ mẹ́wàá sí mẹ́rìnlá tí wọ́n sọ, kódà bí ìgbẹ́ gbuuru bá ti dáwọ́ dúró ní ọjọ́ kejì.",
+        "undiagnosed_audio_url": "/static/audio/yo/ors_how_to_prepare_answer_63eefcfc.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/ors_zinc_role_answer_ab5d0d00.ogg"
       },
       "pcm": {
         "question": "Why nurse dey give zinc tablet join ORS for pikin running belle?",
         "answer": "Zinc tablet dey make running belle quick stop, make am no too strong, and e dey protect the pikin belle for coming months once you finish the full days wey clinic talk.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If nurse never see the pikin yet: start ORS fast so body no dry, then go clinic or registered pharmacy make dem measure exact zinc tablet for the pikin age—no break big person medicine give small pikin.",
+        "diagnosed_text": "If nurse or doctor don prescribe zinc tablet join ORS: give am every day finish the full 10 to 14 days wey dem talk, even if running belle stop after two days. Zinc dey heal pikin belle well.",
+        "undiagnosed_audio_url": "/static/audio/pcm/ors_how_to_prepare_answer_7cfc8790.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/ors_zinc_role_answer_0fe4398c.ogg"
       }
     },
     "samples": {
@@ -445,17 +577,29 @@
       "en": {
         "question": "Should I stop breastfeeding or feeding my child during diarrhoea?",
         "answer": "No. Continue breastfeeding more frequently and keep offering soft, nutritious meals alongside ORS so your child keeps strength and recovers faster.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If your child has not been seen by a doctor yet: do not starve the child or stop breastmilk. Breastfeed more often alongside ORS, and go to a clinic urgently if the child refuses to suck, becomes very sleepy, or has blood in the stool.",
+        "diagnosed_text": "If a clinician has examined your child for diarrhoea: keep breastfeeding frequently and offer soft mashed foods alongside ORS and zinc during recovery, plus an extra meal a day after recovery so your child regains weight quickly.",
+        "undiagnosed_audio_url": "/static/audio/en/ors_continue_breastfeeding_answer_34d118c7.ogg",
+        "diagnosed_audio_url": "/static/audio/en/ors_give_after_each_stool_answer_1a4306b5.ogg"
       },
       "yo": {
         "question": "Ṣé ó yẹ kí n dáwọ́ ọmú tàbí oúnjẹ dúró nígbà tí ọmọ bá ń ya ìgbẹ́ gbuuru?",
         "answer": "Rárá, má ṣe dáwọ́ ọmú dúró. Máa fún ọmọ ní ọmú sí i àti oúnjẹ rírọ̀ tó ní èròjà pẹ̀lú ORS kí okun má ṣe tán nínú ara ọmọ.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí dókítà kò bá tíì yẹ ọmọ wò: má ṣe dáwọ́ ọmú tàbí oúnjẹ dúró. Fún ọmọ ní ọmú sí i pẹ̀lú ORS, kí o sì sáré lọ sí ilé ìwòsàn bí ọmọ bá kọ ọmú, tí ó bá ń sùn jù, tàbí tí ẹ̀jẹ̀ bá wà nínú ìgbẹ́.",
+        "diagnosed_text": "Tí dókítà bá ti yẹ ọmọ wò tí ó sì ti kọ ìtọ́jú fún un: máa tẹ̀síwájú pẹ̀lú fífún ọmọ ní ọmú déédéé àti oúnjẹ rírọ̀ pẹ̀lú ORS àti zinc kí ara rẹ̀ lè tètè gba okun padà.",
+        "undiagnosed_audio_url": "/static/audio/yo/ors_continue_breastfeeding_answer_30da94fb.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/ors_give_after_each_stool_answer_64134f35.ogg"
       },
       "pcm": {
         "question": "I suppose stop breastmilk or food when my pikin dey purge?",
         "answer": "No stop am at all! Give breastmilk plenty-plenty and still give soft healthy food join ORS so your pikin body no go weak and e go quick recover.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If doctor never examine the pikin yet: no stop breastmilk and no starve pikin at all. Give breastmilk more often join ORS, and run go hospital sharp-sharp if pikin refuse to suck breast, body too weak, or blood dey inside stool.",
+        "diagnosed_text": "If doctor don check pikin tell you wetin dey happen: continue breastmilk steady and give soft nutritious food join ORS plus zinc tablets until pikin recover strong-strong.",
+        "undiagnosed_audio_url": "/static/audio/pcm/ors_continue_breastfeeding_answer_68535fb2.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/ors_give_after_each_stool_answer_622375cb.ogg"
       }
     },
     "samples": {
@@ -484,17 +628,29 @@
       "en": {
         "question": "When should a pregnant woman start antenatal clinic visits?",
         "answer": "Register for antenatal care as soon as you suspect or confirm you are pregnant. Early visits allow health workers to check your blood pressure, blood levels, and baby growth throughout pregnancy.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you think you might be pregnant and have not started antenatal care: visit a clinic promptly to confirm the pregnancy and begin antenatal checks—early visits check blood pressure, urine, blood count, and protect both mother and baby.",
+        "diagnosed_text": "If your pregnancy is already confirmed and registered at antenatal clinic: attend every scheduled visit (even when feeling fine), bring your antenatal card, take routine clinic supplements as directed, and report any warning signs immediately.",
+        "undiagnosed_audio_url": "/static/audio/en/pregnancy_antenatal_visits_answer_37320629.ogg",
+        "diagnosed_audio_url": "/static/audio/en/pregnancy_iron_folate_food_answer_c061900b.ogg"
       },
       "yo": {
         "question": "Ìgbà wo ni obìnrin tó lóyún yẹ kí ó bẹ̀rẹ̀ ìwòsàn aláboyún?",
         "answer": "Bẹ̀rẹ̀ ìwòsàn aláboyún ní kété tí o bá ti fura tàbí mọ̀ pé o lóyún. Àwọn àyẹ̀wò ìbẹ̀rẹ̀ yìí ń jẹ́ kí nọ́ọ̀sì àti dókítà máa yẹ ìfúnpá, ẹ̀jẹ̀, àti ìdàgbàsókè ọmọ wò.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí o bá fura pé o lóyún ṣùgbọ́n tí dókítà kò tíì ṣàyẹ̀wò rẹ: lọ sí ilé ìwòsàn kíákíá láti fìdí rẹ̀ múlẹ̀ kí o sì bẹ̀rẹ̀ ìforúkọsílẹ̀ aláboyún láti ṣàyẹ̀wò ìfúnpá, ìtọ̀, àti ẹ̀jẹ̀ rẹ ní àárọ̀.",
+        "diagnosed_text": "Tí dókítà bá ti fìdí oyún rẹ múlẹ̀ tí o sì ti bẹ̀rẹ̀ ìwòsàn aláboyún: máa lọ sí gbogbo ìpàdé ilé ìwòsàn rẹ déédéé, mú káàdì ìwòsàn rẹ dání, máa lo àwọn oògùn tí wọ́n fún ọ, kí o sì fi àmì ìkìlọ̀ tó dókítà létí lẹ́sẹ̀kẹsẹ̀.",
+        "undiagnosed_audio_url": "/static/audio/yo/pregnancy_antenatal_visits_answer_d5e99801.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/pregnancy_iron_folate_food_answer_3bdf2105.ogg"
       },
       "pcm": {
         "question": "When belle woman suppose start antenatal clinic?",
         "answer": "Go register for antenatal clinic sharp-sharp once you suspect or know say you get belle. Early checkup dey help nurse and doctor monitor your BP, your blood level, and how baby dey grow.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you just suspect say you carry belle and doctor never check you yet: go clinic quick-quick confirm am and start antenatal card early so nurse fit check your BP, urine, and blood level.",
+        "diagnosed_text": "If doctor don confirm your belle and you already dey attend antenatal: go every clinic appointment wey dem give you even when body strong, carry your card follow, take your clinic blood tablets, and call nurse quick if any danger sign show.",
+        "undiagnosed_audio_url": "/static/audio/pcm/pregnancy_antenatal_visits_answer_7f00905f.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/pregnancy_iron_folate_food_answer_8c2ccd4d.ogg"
       }
     },
     "samples": {
@@ -523,17 +679,29 @@
       "en": {
         "question": "Which warning signs in pregnancy need urgent clinic care?",
         "answer": "Go straight to a hospital or health centre if you notice any vaginal bleeding, severe headache with blurred vision, sudden swelling of your face or hands, high fever, or if your baby stops moving as usual.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Whether you have registered for antenatal care yet or not: if you notice vaginal bleeding, severe headache with blurred vision, sudden hand/face swelling, high fever, severe belly pain, or fits in pregnancy, go to a hospital emergency unit right away.",
+        "diagnosed_text": "Even if your antenatal checks were recently normal or you are already taking clinic tablets: danger signs like bleeding, blurred vision, severe headache, sudden swelling, water breaking early, or reduced baby kicks require immediate same-day hospital review.",
+        "undiagnosed_audio_url": "/static/audio/en/pregnancy_danger_signs_overview_answer_41ad91e7.ogg",
+        "diagnosed_audio_url": "/static/audio/en/pregnancy_danger_signs_overview_answer_41ad91e7.ogg"
       },
       "yo": {
         "question": "Àwọn àmì ìkìlọ̀ wo nínú oyún ló nílò ìtọ́jú ilé ìwòsàn ní kíákíá?",
         "answer": "Lọ sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀ bí o bá rí ìṣàn ẹ̀jẹ̀ kankan, orí fífọ́ líle pẹ̀lú ojú ríru, wíwú ojú tàbí ọwọ́ lójijì, ibà gíga, tàbí tí ọmọ kò bá rìn bíi ti tẹ́lẹ̀.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Yálà o ti forúkọsílẹ̀ aláboyún tàbí o kò tíì bẹ̀rẹ̀: bí o bá rí ìṣàn ẹ̀jẹ̀, orí fífọ́ líle pẹ̀lú ojú ríru, wíwú ojú tàbí ọwọ́ lójijì, ibà gíga, tàbí ìrora ikùn líle, sáré lọ sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀.",
+        "diagnosed_text": "Kódà bí àyẹ̀wò aláboyún rẹ bá dára lẹ́nu àìpẹ́ tàbí o ti ń lo oògùn ilé ìwòsàn: tí ẹ̀jẹ̀ bá ń jáde, ojú ríru, orí fífọ́ líle, omi tó dà sílẹ̀ láìtọ́jọ́, tàbí tí ọmọ kò bá rìn mọ́, lọ sí ilé ìwòsàn lọ́jọ́ kan náà.",
+        "undiagnosed_audio_url": "/static/audio/yo/pregnancy_danger_signs_overview_answer_201e4f00.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/pregnancy_danger_signs_overview_answer_201e4f00.ogg"
       },
       "pcm": {
         "question": "Which danger signs for pregnancy mean say make woman run go hospital?",
         "answer": "Run go clinic or hospital sharp-sharp if blood comot from body, if serious headache dey worry you with eye blur, if face or hand swell suddenly, if body hot bad, or if pikin stop to dey kick.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Whether you don register antenatal or you never go clinic yet: any blood from body, serious headache with blur eye, sudden swollen face or hand, high fever, or sharp belly pain during pregnancy mean run go hospital emergency immediately.",
+        "diagnosed_text": "Even if nurse talk before say your antenatal check good or you dey take hospital drugs: if bleeding start, eye blur, serious headache come, water burst early, or baby stop to kick well, go hospital right away.",
+        "undiagnosed_audio_url": "/static/audio/pcm/pregnancy_danger_signs_overview_answer_247761f8.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/pregnancy_danger_signs_overview_answer_247761f8.ogg"
       }
     },
     "samples": {
@@ -565,17 +733,29 @@
       "en": {
         "question": "Why are sudden hand or face swelling and severe headache checked carefully in pregnancy?",
         "answer": "Sudden swelling of the face or hands together with a strong headache or blurred vision can be a sign of dangerously high blood pressure in pregnancy and requires an urgent clinic check.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have not had your blood pressure checked yet: sudden swelling of the face or hands with headache or blurred vision in pregnancy is never 'normal pregnancy tiredness'—go to a health facility immediately to check for pre-eclampsia.",
+        "diagnosed_text": "If you were already told your blood pressure is raised during pregnancy: report any new severe headache, vision spots/blurring, upper belly pain, or sudden facial/hand swelling straight to the hospital without waiting for your next scheduled appointment.",
+        "undiagnosed_audio_url": "/static/audio/en/pregnancy_swelling_headache_answer_14b12373.ogg",
+        "diagnosed_audio_url": "/static/audio/en/pregnancy_danger_signs_overview_answer_41ad91e7.ogg"
       },
       "yo": {
         "question": "Kí ló dé tí wíwú ojú tàbí ọwọ́ àti orí fífọ́ líle fi ṣe pàtàkì nígbà oyún?",
         "answer": "Wíwú ojú àti ọwọ́ lójijì pẹ̀lú orí fífọ́ líle tàbí ojú ríru lè jẹ́ àmì ìfúnpá gíga tó léwu nínú oyún, ó sì yẹ kí òṣìṣẹ́ ìlera yẹ̀ ẹ́ wò lẹ́sẹ̀kẹsẹ̀.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí a kò bá tíì yẹ ìfúnpá rẹ wò: wíwú ojú tàbí ọwọ́ lójijì pẹ̀lú orí fífọ́ tàbí ojú ríru nígbà oyún kì í ṣe àárẹ̀ lásán—lọ sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀ láti yẹ ìfúnpá àti ìtọ̀ wò.",
+        "diagnosed_text": "Tí dókítà bá ti sọ fún ọ tẹ́lẹ̀ pé ìfúnpá rẹ ga nínú oyún: má ṣe dúró de ọjọ́ ìpàdé mìíràn bí orí fífọ́ líle tuntun, ojú ríru, ìrora òkè ikùn, tàbí wíwú ojú bá hàn—lọ sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀.",
+        "undiagnosed_audio_url": "/static/audio/yo/pregnancy_swelling_headache_answer_5ed6fe3b.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/pregnancy_danger_signs_overview_answer_201e4f00.ogg"
       },
       "pcm": {
         "question": "Why sudden face or hand swelling with strong headache serious for pregnancy?",
         "answer": "If pregnant woman face or hand swell up suddenly join strong headache or eye wey dey blur, e fit mean say BP don high dangerously. E need urgent doctor check straight.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If nurse never check your BP yet: sudden swollen face or hand join headache or blur eye during belle no be normal pregnancy body—go hospital straight make dem check your BP and urine immediately.",
+        "diagnosed_text": "If doctor already talk say your BP high for belle: no wait until your next clinic day if new strong headache, blur vision, pain for up-belly, or sudden face/hand swelling start—go hospital sharp-sharp.",
+        "undiagnosed_audio_url": "/static/audio/pcm/pregnancy_swelling_headache_answer_b16d9fc0.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/pregnancy_danger_signs_overview_answer_247761f8.ogg"
       }
     },
     "samples": {
@@ -604,17 +784,29 @@
       "en": {
         "question": "What foods and routine clinic tablets support healthy blood levels in pregnancy?",
         "answer": "Antenatal clinics provide routine iron and folic acid tablets to protect mother and baby. Eating dark leafy vegetables, beans, eggs, fish, and fruits also supports strong blood.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have not visited an antenatal clinic yet: eat dark leafy greens, beans, eggs, fish, and fruits daily, and register early so a midwife or doctor can check your blood level and start the right iron and folic acid tablets safely.",
+        "diagnosed_text": "If your antenatal clinic already prescribed iron and folic acid tablets (or anaemia treatment): take them daily as advised—pairing with vitamin C fruits like oranges helps absorption, while taking them separately from tea/coffee improves how your body uses them.",
+        "undiagnosed_audio_url": "/static/audio/en/pregnancy_antenatal_visits_answer_37320629.ogg",
+        "diagnosed_audio_url": "/static/audio/en/pregnancy_iron_folate_food_answer_c061900b.ogg"
       },
       "yo": {
         "question": "Àwọn oúnjẹ àti oògùn ilé ìwòsàn wo ló ń ṣe ìrànwọ́ fún ẹ̀jẹ̀ tó dára nígbà oyún?",
         "answer": "Ilé ìwòsàn aláboyún máa ń fún obìnrin ní oògùn ẹ̀jẹ̀ àti folic acid; jíjẹ ẹ̀fọ́ tútù, ẹ̀wà, ẹyin, ẹja, àti èso tún ń mú kí ẹ̀jẹ̀ pọ̀ sí i.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí o kò bá tíì lọ sí ilé ìwòsàn aláboyún: máa jẹ ẹ̀fọ́ tútù, ẹ̀wà, ẹyin, ẹja, àti èso lójoojúmọ́, kí o sì lọ forúkọsílẹ̀ kíákíá kí nọ́ọ̀sì yẹ ẹ̀jẹ̀ rẹ wò kí ó sì fún ọ ní oògùn iron àti folic acid tó tọ́.",
+        "diagnosed_text": "Tí ilé ìwòsàn aláboyún bá ti fún ọ ní oògùn ẹ̀jẹ̀ (iron àti folic acid): máa lò ó lójoojúmọ́ bí wọ́n ṣe sọ; jíjẹ èso bíi ọsàn pẹ̀lú rẹ̀ ń ran ara lọ́wọ́ láti gbà á dáadáa, má sì mu ún pẹ̀lú tíì tàbí kọfí lẹ́ẹ̀kan náà.",
+        "undiagnosed_audio_url": "/static/audio/yo/pregnancy_antenatal_visits_answer_d5e99801.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/pregnancy_iron_folate_food_answer_3bdf2105.ogg"
       },
       "pcm": {
         "question": "Which food and clinic tablets dey build strong blood for pregnancy?",
         "answer": "Clinic dey give iron and folic acid blood tablets for antenatal to protect mama and baby. Chopping green leaf vegetables, beans, egg, fish, and fruits dey help make blood strong too.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you never start antenatal clinic yet: chop fresh green leaf, beans, egg, fish, and fruits steady, then go clinic early make nurse check your blood level and give you correct iron plus folic acid tablets.",
+        "diagnosed_text": "If antenatal clinic don give you blood tablets (iron and folic acid): swallow dem every day as nurse explain; drinking orange or eating fresh fruit join am dey help body absorb am well, and no take am with tea or coffee at the same time.",
+        "undiagnosed_audio_url": "/static/audio/pcm/pregnancy_antenatal_visits_answer_7f00905f.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/pregnancy_iron_folate_food_answer_8c2ccd4d.ogg"
       }
     },
     "samples": {
@@ -643,17 +835,29 @@
       "en": {
         "question": "How can I check if a medicine packet is genuine and not expired?",
         "answer": "Buy medicines only from licensed pharmacies or clinics. Check that the NAFDAC registration number is printed clearly, confirm the expiry date has not passed, inspect the unbroken seal, and avoid loose unlabelled tablets.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Before buying any over-the-counter remedy when you have not seen a doctor: buy only from a licensed pharmacy or registered patent medicine shop, check the NAFDAC number, expiry date, and unbroken seal, and ask the pharmacist if a clinic check is safer first.",
+        "diagnosed_text": "When picking up or taking medicine a doctor prescribed: double-check the NAFDAC number, expiry date, unbroken foil/bottle seal, and match the drug name and strength on the packet against your prescription before swallowing a dose.",
+        "undiagnosed_audio_url": "/static/audio/en/medicine_ask_before_mixing_answer_3e920b4f.ogg",
+        "diagnosed_audio_url": "/static/audio/en/medicine_check_nafdac_expiry_answer_6395ed3c.ogg"
       },
       "yo": {
         "question": "Báwo ni mo ṣe lè mọ̀ bóyá oògùn jẹ́ ojúlówó tí kò sì tíì bàjẹ́?",
         "answer": "Ra oògùn ní ilé oògùn tó ní ìwé àṣẹ nìkan. Yẹ nọ́ńbà NAFDAC àti ọjọ́ ìparí wò lórí àpò rẹ̀, rí i dájú pé àpò náà kò ya, má sì ra oògùn tí kò ní àmì.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Kí o tó ra oògùn kankan nígbà tí o kò tíì rí dókítà: rà á ní ilé oògùn tó ní ìwé àṣẹ nìkan, ṣàyẹ̀wò nọ́ńbà NAFDAC, ọjọ́ ìparí, àti àpò tó pé, kí o sì béèrè lọ́wọ́ oníṣẹ́ oògùn bóyá o nílò àyẹ̀wò ilé ìwòsàn kókó.",
+        "diagnosed_text": "Nígbà tí o bá ń gba oògùn tí dókítà kọ fún ọ: yẹ nọ́ńbà NAFDAC, ọjọ́ ìparí, àti orúkọ oògùn náà wò dáadáa láti rí i dájú pé ó bá ìwé oògùn dókítà mu kí o tó lò ó.",
+        "undiagnosed_audio_url": "/static/audio/yo/medicine_ask_before_mixing_answer_4ac8ec0a.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/medicine_check_nafdac_expiry_answer_678ee6d2.ogg"
       },
       "pcm": {
         "question": "How I go take check if medicine original and e never expire?",
         "answer": "Buy drug only from registered pharmacy or clinic. Look the pack well for clear NAFDAC number, check say expiry date never pass, make the seal intact, and no buy naked tablets inside nylon without label.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Before you buy any drug by yourself when doctor never check you: buy only from licensed pharmacy or clinic, verify NAFDAC number, expiry date, and intact seal, and ask pharmacist if you need test first.",
+        "diagnosed_text": "When you collect drug wey doctor prescribe give you: still check the NAFDAC number, confirm expiry date never pass, check intact seal, and verify say the name match wetin doctor write before you swallow am.",
+        "undiagnosed_audio_url": "/static/audio/pcm/medicine_ask_before_mixing_answer_a65457fc.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/medicine_check_nafdac_expiry_answer_3cca2092.ogg"
       }
     },
     "samples": {
@@ -682,17 +886,29 @@
       "en": {
         "question": "Can I share leftover antibiotics or use them for another sickness?",
         "answer": "Never share antibiotics with anyone else or take leftover capsules for a new symptom. Wrong antibiotic use fails to cure the real cause of illness and breeds resistant infections.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have not been diagnosed by a doctor: never swallow leftover antibiotics from a previous illness or someone else's pack—not every cough, fever, or stomach upset is bacterial, and wrong antibiotics waste time while building resistant germs.",
+        "diagnosed_text": "If a doctor diagnosed a bacterial infection and prescribed antibiotics: take only the exact antibiotic prescribed for you, finish the full course even after feeling better, and do not save leftovers or share remaining capsules with family members.",
+        "undiagnosed_audio_url": "/static/audio/en/medicine_avoid_leftover_antibiotics_answer_d22f4e64.ogg",
+        "diagnosed_audio_url": "/static/audio/en/medicine_check_nafdac_expiry_answer_6395ed3c.ogg"
       },
       "yo": {
         "question": "Ṣé mo lè fún ẹlòmíràn ní oògùn antibiotics tó ṣẹ́kù tàbí lò ó fún àìsàn mìíràn?",
         "answer": "Má ṣe pín antibiotics pẹ̀lú ẹlòmíràn tàbí lo èyí tó ṣẹ́kù fún àìsàn tuntun. Lílo antibiotics lọ́nà tí kò tọ́ kì í wo àìsàn gidi sàn, ó sì ń mú kí kòkòrò àrùn le sí i.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí dókítà kò bá tíì ṣàyẹ̀wò rẹ: má ṣe lo oògùn antibiotics tó ṣẹ́kù láti àìsàn àtẹ̀yìnwá tàbí ti ẹlòmíràn—kì í ṣe gbogbo ikọ́ tàbí ibà ló nílò antibiotics, lílo èyí tí kò tọ́ sì ń mú kí kòkòrò le sí i.",
+        "diagnosed_text": "Tí dókítà bá ti ṣàyẹ̀wò tí ó sì kọ oògùn antibiotics fún ọ: lo ìwọ̀n tí wọ́n kọ fún ọ pátápátá títí yóò fi tán kódà bí ara rẹ bá ti yá, má sì tọ́jú èyí tó bá ṣẹ́kù tàbí pín in fún ẹlòmíràn.",
+        "undiagnosed_audio_url": "/static/audio/yo/medicine_avoid_leftover_antibiotics_answer_21efe294.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/medicine_check_nafdac_expiry_answer_678ee6d2.ogg"
       },
       "pcm": {
         "question": "I fit give person my leftover antibiotics or use am for another sickness?",
         "answer": "No ever share antibiotics give another person or swallow remaining capsule for new sickness. Wrong antibiotics no go cure the real problem and e dey make germs stubborn for medicine.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If doctor never check your body yet: no swallow leftover antibiotics from old sickness or another person drug pack. Not all cough or fever be bacterial infection—wrong antibiotics fit delay right treatment and make germs stubborn.",
+        "diagnosed_text": "If doctor don check confirm infection write antibiotics for you: swallow only your own prescribed course and finish am completely even when body don strong; no keep balance inside drawer or share give anybody.",
+        "undiagnosed_audio_url": "/static/audio/pcm/medicine_avoid_leftover_antibiotics_answer_22da1920.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/medicine_check_nafdac_expiry_answer_3cca2092.ogg"
       }
     },
     "samples": {
@@ -721,17 +937,29 @@
       "en": {
         "question": "Where should medicines be stored at home away from children?",
         "answer": "Keep medicines in their original labelled containers in a cool, dry place locked or high out of children's reach. Never pour liquid medicines into soft-drink bottles or leave pills in hot sunlight.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Even for ordinary household remedies (like paracetamol or cough syrups) kept before a clinic visit: lock every bottle and blister pack up high in a cool, dry place in its original labelled container—never pour syrups into soft-drink bottles where children could drink them.",
+        "diagnosed_text": "When storing prescribed family medicines during treatment: keep every child's and adult's prescribed bottles clearly separated in their original labelled boxes, away from sunlight and humidity, and locked high out of children's reach.",
+        "undiagnosed_audio_url": "/static/audio/en/medicine_avoid_leftover_antibiotics_answer_d22f4e64.ogg",
+        "diagnosed_audio_url": "/static/audio/en/medicine_safe_storage_children_answer_051e875f.ogg"
       },
       "yo": {
         "question": "Ibo ni mo yẹ kí n tọ́jú oògùn sí nílé kí ó jìnnà sí àwọn ọmọdé?",
         "answer": "Tọ́jú oògùn sínú àpò ìbẹ̀rẹ̀ rẹ̀ ní ibi tó tutù tí ó sì gbẹ, ní ibi gíga tàbí àpótí tí a tì pa kí ọwọ́ ọmọdé má ṣe tọ́ ọ. Má ṣe da oògùn omi sínú ìgò ohun mímu.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Kódà fún àwọn oògùn ilé lásán bíi paracetamol: tọ́jú gbogbo wọn sínú àpò ìbẹ̀rẹ̀ tí ó ní àkọlé ní ibi gíga tàbí àpótí tí a tì pa kí ọwọ́ ọmọdé má tọ́ ọ—má ṣe da oògùn omi sínú ìgò ohun mímu.",
+        "diagnosed_text": "Nígbà tí o bá ń tọ́jú àwọn oògùn ilé ìwòsàn tí wọ́n kọ fún ọ: ya oògùn àgbàlagbà sọ́tọ̀ kúrò lára ti ọmọdé sínú àpò ìbẹ̀rẹ̀ wọn, jìnnà sí oòrùn àti ọrinrin, kí o sì tì í pa kúrò lọ́wọ́ ọmọdé.",
+        "undiagnosed_audio_url": "/static/audio/yo/medicine_avoid_leftover_antibiotics_answer_21efe294.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/medicine_safe_storage_children_answer_7e7f9542.ogg"
       },
       "pcm": {
         "question": "Where I suppose keep medicine for house far from pikin hand?",
         "answer": "Keep every medicine inside im original bottle or pack for cool dry place up high or locked cupboard where small pikin no fit reach. No ever pour syrup inside soft drink bottle.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Even for everyday house medicine like paracetamol or syrup: keep all bottle and sachet inside original labelled pack high up or locked cupboard where pikin hand no reach—never pour syrup inside soft drink bottle.",
+        "diagnosed_text": "When you dey store prescribed hospital drugs for house: separate adult tablets from pikin medicine inside their original boxes away from hot sun, and lock dem well where small pikin no go reach am.",
+        "undiagnosed_audio_url": "/static/audio/pcm/medicine_avoid_leftover_antibiotics_answer_22da1920.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/medicine_safe_storage_children_answer_13a07441.ogg"
       }
     },
     "samples": {
@@ -760,17 +988,29 @@
       "en": {
         "question": "Why should I tell the pharmacist or doctor about all medicines I already take?",
         "answer": "Different brand-name medicines can contain the same active drug, such as paracetamol, or interact dangerously with one another. Sharing your current medicine list protects you from accidental double dosing.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you have not seen a doctor yet and are buying pharmacy medicines: tell the pharmacist everything you already took today (including painkillers, cold mixtures, and herbs) so you do not accidentally double-dose active drugs like paracetamol.",
+        "diagnosed_text": "If you already take prescribed medicines (for example BP, diabetes, pregnancy, or malaria tablets): tell your doctor and pharmacist the full list before adding any new tablet, syrup, or herbal drink so treatments do not clash.",
+        "undiagnosed_audio_url": "/static/audio/en/medicine_avoid_leftover_antibiotics_answer_d22f4e64.ogg",
+        "diagnosed_audio_url": "/static/audio/en/medicine_ask_before_mixing_answer_3e920b4f.ogg"
       },
       "yo": {
         "question": "Kí ló dé tí mo fi gbọ́dọ̀ sọ gbogbo oògùn tí mò ń lò fún oníṣègùn?",
         "answer": "Orúkọ oògùn méjì ọ̀tọ̀ọ̀tọ̀ lè ní èròjà kan náà bíi paracetamol, tàbí kí wọ́n má ṣe bára wọn mu. Sísọ gbogbo oògùn tí o ń lò fún dókítà ń dènà lílo oògùn pọ̀ jù.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "Tí o kò bá tíì rí dókítà ṣùgbọ́n tí o fẹ́ ra oògùn ní ilé oògùn: sọ gbogbo oògùn tí o ti lò lónìí fún oníṣẹ́ oògùn (pẹ̀lú oògùn ìrora tàbí àgbo) kí o má baà lo èròjà kan náà bíi paracetamol ní ìlọ́po méjì.",
+        "diagnosed_text": "Tí o bá ti ń lo oògùn ilé ìwòsàn (bíi ti ìfúnpá, àtọ̀gbẹ, oyún, tàbí ibà): fi gbogbo àwọn oògùn rẹ hàn fún dókítà tàbí oníṣẹ́ oògùn kí o tó fi oògùn tuntun tàbí àgbo kún un kí wọ́n má baà bára wọn jà.",
+        "undiagnosed_audio_url": "/static/audio/yo/medicine_avoid_leftover_antibiotics_answer_21efe294.ogg",
+        "diagnosed_audio_url": "/static/audio/yo/medicine_ask_before_mixing_answer_4ac8ec0a.ogg"
       },
       "pcm": {
         "question": "Why I must tell doctor or pharmacist all the drugs I dey take already?",
         "answer": "Two different medicine names fit get the exact same ingredient inside, like paracetamol, or dem fit clash for body. Showing all your drugs dey stop accidental overdose.",
-        "status": "published"
+        "status": "published",
+        "undiagnosed_text": "If you never see doctor and you want buy chemist medicine: show pharmacist all drugs wey you don swallow today (including painkiller, cold drug, or agbo) so two different brands with the same paracetamol no go cause overdose.",
+        "diagnosed_text": "If you already get prescribed drugs (like BP, sugar, pregnancy, or malaria tablets): always show your doctor or pharmacist full list before you add any new drug or agbo so dem no clash for your body.",
+        "undiagnosed_audio_url": "/static/audio/pcm/medicine_avoid_leftover_antibiotics_answer_22da1920.ogg",
+        "diagnosed_audio_url": "/static/audio/pcm/medicine_ask_before_mixing_answer_a65457fc.ogg"
       }
     },
     "samples": {

@@ -1,7 +1,14 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { t } from "../i18n";
-import type { Lang, TopicSummary } from "../types";
-import { ChevronRightIcon, MicIcon, TopicIcon, WifiOffIcon } from "./Icons";
+import type { Lang, QuestionSummary, TopicSummary } from "../types";
+import {
+  ChevronRightIcon,
+  KeyboardIcon,
+  MicIcon,
+  TopicIcon,
+  VolumeIcon,
+  WifiOffIcon
+} from "./Icons";
 
 interface HomeViewProps {
   lang: Lang;
@@ -18,6 +25,8 @@ interface HomeViewProps {
   onCancelRecording: () => void;
   onSubmitTypedText?: (text: string) => void;
   onSelectTopic: (slug: string) => void;
+  onOpenQuestion?: (faqId: number) => void;
+  onPlayClip?: (url: string | null | undefined) => void;
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({
@@ -34,15 +43,30 @@ export const HomeView: React.FC<HomeViewProps> = ({
   onStopRecording,
   onCancelRecording,
   onSubmitTypedText,
-  onSelectTopic
+  onSelectTopic,
+  onOpenQuestion,
+  onPlayClip
 }) => {
-  const [tapMode, setTapMode] = useState(false);
+  const [tapMode, setTapMode] = useState(true);
+  const [showTypedInput, setShowTypedInput] = useState(false);
   const [holdingGesture, setHoldingGesture] = useState(false);
   const [typedQuery, setTypedQuery] = useState("");
   const holdingRef = useRef(false);
 
   const remaining = Math.max(0, 15 - recordingSeconds);
   const activeVoiceCapture = isRecording || isInitializing;
+
+  // Pick up to 3 representative starter questions across topics for progressive onboarding
+  const starterQuestions = useMemo<QuestionSummary[]>(() => {
+    const picks: QuestionSummary[] = [];
+    for (const tp of topics) {
+      if (tp.questions.length > 0) {
+        picks.push(tp.questions[0]);
+      }
+      if (picks.length >= 3) break;
+    }
+    return picks;
+  }, [topics]);
 
   const finishHold = useCallback(() => {
     if (!holdingRef.current) return;
@@ -108,11 +132,18 @@ export const HomeView: React.FC<HomeViewProps> = ({
   };
 
   return (
-    <main className="max-w-2xl mx-auto px-4 py-6">
+    <main className="max-w-2xl mx-auto px-4 py-5">
       <section
-        aria-label={t(lang, "holdToSpeak")}
-        className="bg-surface border border-seam rounded-2xl p-6 sm:p-8 text-center shadow-sm mb-8"
+        aria-labelledby="voice-triage-heading"
+        className="bg-surface border border-seam rounded-2xl p-6 sm:p-7 text-center shadow-sm mb-7"
       >
+        <h1 id="voice-triage-heading" className="text-xl sm:text-2xl font-bold text-ink mb-1.5">
+          {t(lang, "heroPrimaryBtn")}
+        </h1>
+        <p className="text-sm text-ink-muted prose-measure mx-auto mb-5" aria-live="polite">
+          {tapMode ? t(lang, "tapVoiceHelper") : t(lang, "holdTooShort")}
+        </p>
+
         {isOffline ? (
           <div className="py-4 flex flex-col items-center gap-3">
             <div className="w-20 h-20 rounded-full bg-ochre-bg border border-ochre-border text-ochre flex items-center justify-center">
@@ -163,7 +194,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   {remaining}s
                 </span>
               ) : (
-                <span className="text-xs font-extrabold px-2 leading-tight">
+                <span className="text-xs font-extrabold px-3 leading-tight">
                   {isSubmittingVoice
                     ? t(lang, "processingVoice")
                     : isInitializing
@@ -176,11 +207,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </button>
 
             {activeVoiceCapture ? (
-              <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-3" role="status" aria-live="polite">
                 <div>
-                  <h1 className="text-xl font-bold text-ink">
+                  <h2 className="text-xl font-bold text-ink">
                     {isInitializing ? t(lang, "preparingMic") : t(lang, "listeningTitle")}
-                  </h1>
+                  </h2>
                   <p className="text-sm text-ink-muted mt-1">
                     {!tapMode && holdingGesture ? t(lang, "releaseToSend") : t(lang, "listeningHint")}
                   </p>
@@ -211,14 +242,30 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
               </div>
             ) : (
-              <button
-                type="button"
-                onClick={() => setTapMode((v) => !v)}
-                aria-label={tapMode ? t(lang, "switchHoldMode") : t(lang, "switchTapMode")}
-                className="min-h-[48px] px-4 py-2 rounded-lg text-sm font-semibold text-viridian hover:bg-viridian-soft transition-colors"
-              >
-                {tapMode ? t(lang, "switchHoldMode") : t(lang, "switchTapMode")}
-              </button>
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setTapMode((v) => !v)}
+                  aria-label={tapMode ? t(lang, "switchHoldMode") : t(lang, "switchTapMode")}
+                  className="min-h-[48px] px-3.5 py-2 rounded-lg text-sm font-semibold text-viridian hover:bg-viridian-soft transition-colors"
+                >
+                  {tapMode ? t(lang, "switchHoldMode") : t(lang, "switchTapMode")}
+                </button>
+                {onSubmitTypedText && (
+                  <button
+                    type="button"
+                    aria-expanded={showTypedInput}
+                    aria-controls="typed-question-panel"
+                    onClick={() => setShowTypedInput((v) => !v)}
+                    className="min-h-[48px] px-3.5 py-2 rounded-lg text-sm font-semibold text-ink hover:bg-subtle border border-seam inline-flex items-center gap-1.5 transition-colors"
+                  >
+                    <KeyboardIcon className="w-4 h-4 text-viridian" />
+                    <span>
+                      {showTypedInput ? t(lang, "hideTypedQuestion") : t(lang, "typeQuestionToggle")}
+                    </span>
+                  </button>
+                )}
+              </div>
             )}
 
             {voiceError && !activeVoiceCapture && (
@@ -230,8 +277,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </div>
             )}
 
-            {onSubmitTypedText && !activeVoiceCapture && (
+            {onSubmitTypedText && !activeVoiceCapture && showTypedInput && (
               <form
+                id="typed-question-panel"
                 onSubmit={(e) => {
                   e.preventDefault();
                   if (typedQuery.trim()) {
@@ -258,6 +306,43 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   {t(lang, "sendTypedQuestion")}
                 </button>
               </form>
+            )}
+
+            {!activeVoiceCapture && starterQuestions.length > 0 && (
+              <div className="w-full pt-4 border-t border-seam text-left">
+                <p className="text-sm font-bold text-ink mb-2.5">{t(lang, "tryAskingHeading")}</p>
+                <div className="flex flex-col gap-2">
+                  {starterQuestions.map((q) => (
+                    <div
+                      key={q.faq_id}
+                      className="bg-ground border border-seam rounded-xl flex items-stretch overflow-hidden hover:border-viridian transition-colors"
+                    >
+                      {q.question_audio_url && onPlayClip && (
+                        <button
+                          type="button"
+                          onClick={() => onPlayClip(q.question_audio_url)}
+                          aria-label={`${t(lang, "playQuestionAudio")}: ${q.question}`}
+                          className="min-w-[48px] min-h-[48px] px-3 bg-viridian-soft text-viridian hover:bg-viridian hover:text-white flex items-center justify-center border-r border-seam transition-colors shrink-0"
+                        >
+                          <VolumeIcon className="w-5 h-5" />
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() =>
+                          onOpenQuestion
+                            ? onOpenQuestion(q.faq_id)
+                            : onSubmitTypedText?.(q.question)
+                        }
+                        className="flex-1 min-h-[48px] px-3.5 py-2.5 text-left text-sm font-semibold text-ink flex items-center justify-between gap-2"
+                      >
+                        <span className="leading-snug">{q.question}</span>
+                        <ChevronRightIcon className="w-4 h-4 text-viridian shrink-0" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
             )}
           </div>
         )}

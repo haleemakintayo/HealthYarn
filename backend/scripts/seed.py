@@ -127,6 +127,10 @@ def seed_database(
         for lang, tdata in entry.get("translations", {}).items():
             q_text = tdata["question"]
             a_text = tdata["answer"]
+            u_text = tdata.get("undiagnosed_text")
+            d_text = tdata.get("diagnosed_text")
+            u_audio = tdata.get("undiagnosed_audio_url")
+            d_audio = tdata.get("diagnosed_audio_url")
             raw_status = tdata.get("status", "draft")
             has_placeholder = is_placeholder_text(q_text) or is_placeholder_text(a_text)
             if has_placeholder:
@@ -149,6 +153,12 @@ def seed_database(
             if tr:
                 tr.question_text = q_text
                 tr.answer_text = a_text
+                tr.undiagnosed_text = u_text
+                tr.diagnosed_text = d_text
+                if u_audio is not None:
+                    tr.undiagnosed_audio_url = u_audio
+                if d_audio is not None:
+                    tr.diagnosed_audio_url = d_audio
                 tr.status = final_status
                 tr.updated_at = utc_now()
             else:
@@ -157,6 +167,10 @@ def seed_database(
                     lang=lang,
                     question_text=q_text,
                     answer_text=a_text,
+                    undiagnosed_text=u_text,
+                    diagnosed_text=d_text,
+                    undiagnosed_audio_url=u_audio,
+                    diagnosed_audio_url=d_audio,
                     status=final_status,
                 )
                 session.add(tr)
@@ -216,12 +230,24 @@ def seed_database(
             )
         counts["system_messages"] += 1
 
-    # 5. Clinics
+    # 5. Clinics (prune stale clinics removed from content/clinics.json)
+    desired_clinic_pairs = {(cl["name"], cl["state"]) for cl in clinics_data}
+    for old_cl in session.exec(select(Clinic)).all():
+        if (old_cl.name, old_cl.state) not in desired_clinic_pairs:
+            session.delete(old_cl)
+    session.flush()
+
     for cl in clinics_data:
         existing_cl = session.exec(
             select(Clinic).where(Clinic.name == cl["name"], Clinic.state == cl["state"])
         ).first()
-        if not existing_cl:
+        if existing_cl:
+            existing_cl.lga = cl["lga"]
+            existing_cl.phone = cl["phone"]
+            existing_cl.type = cl["type"]
+            existing_cl.lat = cl.get("lat")
+            existing_cl.lng = cl.get("lng")
+        else:
             session.add(
                 Clinic(
                     name=cl["name"],

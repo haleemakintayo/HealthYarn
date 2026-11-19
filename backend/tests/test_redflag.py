@@ -40,6 +40,9 @@ def test_red_flags_fire(seeded_session, lang, text):
         ("yo", "Bawo ni a se n po omi iyo ORS?"),
         ("pcm", "How I go mix ORS water for my pikin?"),
         ("pcm", "I fit buy malaria drug without test?"),
+        ("pcm", "Which food dey give strong blood for belle during pregnancy?"),
+        ("yo", "Dákun báwo ni a ṣe ń pò ORS?"),
+        ("yo", "Kọ́ mi nípa oògùn ibà"),
         ("en", "Where should I store paracetamol safely away from children?"),
     ],
 )

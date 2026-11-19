@@ -177,3 +177,49 @@ Every Pidgin and Yorùbá string drafted for `Sections A–I`, topic labels, con
 | `docBackAbout` | Back to About | Go back About | Padà sí Nípa |
 | `privacyDocTitle` | Privacy Notice (NDPA 2023) | Full Privacy Notice (NDPA 2023) | Àkọsílẹ̀ Ààbò (NDPA 2023) |
 | `creditsDocTitle` | Full Credits & Licences | Full Credits & Licences | Àwọn Ìdúpẹ́ & Ìwé Àṣẹ |
+
+---
+
+## Diagnosis Status Toggle UI & Dual-Track FAQ Guidance
+
+| Key / Scope | English | Nigerian Pidgin (`pcm`) — Draft | Yorùbá (`yo`) — Draft |
+| --- | --- | --- | --- |
+| `diagnosisToggleLabel` | Choose your situation | Pick your own situation | Yan ipò tí o wà |
+| `undiagnosedTab` | Not yet tested / diagnosed | Doctor never test me | Dókítà kò tíì ṣàyẹ̀wò mi |
+| `diagnosedTab` | Diagnosed by a doctor | Doctor don test & confirm am | Dókítà ti ṣàyẹ̀wò ó sì ti fìdí rẹ̀ múlẹ̀ |
+| `diagnosisAutoDetectedHint` | Selected from your question — tap to switch | We pick dis one from wetin you ask — tap to change am | A yan èyí látinú ìbéèrè rẹ — tẹ̀ ẹ́ láti yí padà |
+| Dual-track FAQ answers (`content/faqs.json`, 20 FAQs × `undiagnosed_text` & `diagnosed_text`) | Added pre-diagnosis (get tested / safe first aid) and post-diagnosis (complete prescribed course / danger-sign monitoring) guidance across all 20 FAQs. | Drafted matching Pidgin `undiagnosed_text` and `diagnosed_text` guidance for all 20 FAQs; ready for native speaker and clinical review. | Drafted matching Yorùbá `undiagnosed_text` and `diagnosed_text` guidance for all 20 FAQs; ready for native speaker and clinical review. |
+
+---
+
+## Progressive 3-Step `/app` Flow & Clinics Drawer Copy
+
+| Key | English | Nigerian Pidgin (`pcm`) — Draft | Yorùbá (`yo`) — Draft |
+| --- | --- | --- | --- |
+| `stepProgressLabel` | Health guide steps | Steps inside health guide | Àwọn ìgbésẹ̀ ìtọ́sọ́nà ìlera |
+| `stepAsk` | Ask | Ask | Béèrè |
+| `stepChoose` | Question | Question | Ìbéèrè |
+| `stepAnswer` | Answer | Answer | Ìdáhùn |
+| `tapVoiceHelper` | Tap once to ask your question out loud, then tap again when finished. | Press mic one time talk your mind, then press am again when you don finish. | Tẹ bọ́tìnì lẹ́ẹ̀kan láti sọ̀rọ̀, kí o sì tún tẹ̀ ẹ́ nígbà tí o bá parí. |
+| `tryAskingHeading` | Try asking | Questions wey you fit try | Àpẹẹrẹ ìbéèrè |
+| `typeQuestionToggle` | Type a question instead | Type your question instead | Kọ ìbéèrè rẹ dípò sísọ̀rọ̀ |
+| `hideTypedQuestion` | Hide typing box | Hide typing box | Pa àpótí ìkọ̀wé mọ́ |
+| `topicTapHint` | Tap the speaker icon to hear a question aloud, or tap the text to open the full answer. | Press speaker icon make you hear the question, or press the words open full answer. | Tẹ àmì agbohùn láti gbọ́ ìbéèrè, tàbí tẹ ọ̀rọ̀ láti rí ìdáhùn kíkún. |
+| `listenAnswer` | Listen to answer | Hear answer | Gbọ́ ìdáhùn |
+| `stopAudio` | Stop audio | Stop audio | Dá ohùn dúró |
+| `speakingAnswer` | Speaking answer | Dey talk answer | Ń ka ìdáhùn |
+| `speakingDisclaimer` | Speaking safety notice | Dey talk safety note | Ń ka ìkìlọ̀ ààbò |
+| `nextStepsHeading` | What would you like to do next? | Wetin you wan do next? | Kí ni o fẹ́ ṣe tẹ̀lé? |
+| `nearbyClinicsBtn` | Nearby hospitals & clinics (Abeokuta) | Hospitals near you (Abeokuta) | Àwọn ilé ìwòsàn nítòsí (Abẹ́òkúta) |
+| `hideNearbyClinics` | Hide clinics list | Hide hospitals list | Pa àtòjọ ilé ìwòsàn mọ́ |
+| `nearbyClinicsNote` | Ogun State public & mission health facilities in Abeokuta: | Hospitals and health centres for Abeokuta, Ogun State: | Àwọn ilé ìwòsàn ìjọba àti ìpìlẹ̀ ní Abẹ́òkúta, Ìpínlẹ̀ Ògùn: |
+| `moreInTopicBtn` | More in this topic | See more for dis topic | Àwọn ìbéèrè mìíràn nínú àkòrí yìí |
+| `askAnotherBtn` | Ask another question | Ask another question | Béèrè ìbéèrè mìíràn |
+| `aboutWhatItDoes` (3-tier update) | Matches pre-approved clinical guides first and uses strictly guardrailed general guidance outside the core guide. | e dey check confirmed guides first, and e get safe guardrailed general guide for valid health question wey no dey inside the main list. | ó máa ń wá inú ìwé ìtọ́kasí tí a ti yẹ̀wò kọ́kọ́, ó sì ń lo ìtọ́sọ́nà AI tó ní ààbò fún ìbéèrè ìlera tó péye mìíràn. |
+| `safetyBody` (3-tier update) | Core answers checked by clinicians; AI general guidance clearly labelled and directs to a clinic. | Main answers checked by health workers; AI general guide dey carry clear label and go direct you go clinic. | Àwọn ìdáhùn pàtàkì láti ìlànà WHO/FMOH; ìtọ́sọ́nà AI máa ń ní àmì ìdámọ̀ tó ṣe kedere, á sì darí rẹ sí ilé ìwòsàn. |
+| `aboutSec3Note` (3-tier update) | Verified answers badged; out-of-core valid questions get labelled guardrailed general info. | Confirmed answers carry Verified badge; extra valid questions get clear-labelled guardrailed general info. | Àwọn ìdáhùn pẹ̀lú àmì Verified; ìbéèrè míràn tó péye gba ìtọ́sọ́nà AI tó ní ààbò pẹ̀lú àmì ìkìlọ̀. |
+| `aboutSec3NoteDemo` (3-tier update) | Preview pairs clinician-drafted core guides with clearly badged guardrailed AI general info. | Demo preview dey combine core health guides with clearly badged guardrailed AI general health info. | Àpẹẹrẹ yìí so ìtọ́kasí pàtàkì pọ̀ mọ́ ìtọ́sọ́nà AI tó ní ààbò àti àmì ìdámọ̀. |
+| `sourceBadgeVerified` | Verified HealthYarn Guide | Verified HealthYarn Guide | Verified HealthYarn Guide |
+| `sourceBadgeAiGuardrailed` | AI General Health Info — consult a clinic | AI General Health Info — go see health worker | Ìtọ́sọ́nà AI Gbogbogbò — kàn sí ilé ìwòsàn |
+| `preparingVoice` | Preparing Nigerian voice… | Dey prepare Nigerian voice… | Ń mú ohùn Yorùbá sílẹ̀… |
+| `liveAudioUnavailable` | Live Yorùbá voice is temporarily unavailable. You can read the guidance below or open a verified topic clip. | Live voice no dey available right now. You fit read the guide below or open confirmed topic audio. | Ohùn Yorùbá alààyè kò sí lọ́wọ́lọ́wọ́. O lè ka ìtọ́sọ́nà ìsàlẹ̀ tàbí gbọ́ àkòrí tí a ti fọwọ́ sí. |

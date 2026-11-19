@@ -49,9 +49,12 @@ def client(test_engine, seeded_session):
 
     with TestClient(app) as c:
         app.state.stt_provider = MockSTT()
+        app.state.gemini_router = None
         matcher = FAQMatcher(disable_heavy=True)
         matcher.build_index(seeded_session)
         app.state.matcher = matcher
         yield c
 
+    if hasattr(app.state, "gemini_router"):
+        delattr(app.state, "gemini_router")
     app.dependency_overrides.clear()

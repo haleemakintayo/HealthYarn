@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { t } from "../i18n";
 import type { Lang, UnsureCandidate } from "../types";
 import { ArrowLeftIcon, ChevronRightIcon, VolumeIcon } from "./Icons";
@@ -27,8 +27,10 @@ export const UnsureView: React.FC<UnsureViewProps> = ({
   onBackHome
 }) => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
+    headingRef.current?.focus();
     setSelectedId(null);
     if (autoplayEnabled && messageAudioUrl) {
       onPlayClip(messageAudioUrl);
@@ -46,12 +48,12 @@ export const UnsureView: React.FC<UnsureViewProps> = ({
   };
 
   return (
-    <main className="max-w-2xl mx-auto px-4 py-6">
+    <main className="max-w-2xl mx-auto px-4 py-5">
       <button
         type="button"
         onClick={onBackHome}
         aria-label={t(lang, "backHome")}
-        className="min-h-[48px] px-4 py-2 rounded-lg bg-surface border border-seam text-ink font-semibold inline-flex items-center gap-2 hover:bg-subtle transition-colors mb-6"
+        className="min-h-[48px] px-4 py-2 rounded-lg bg-surface border border-seam text-ink font-semibold inline-flex items-center gap-2 hover:bg-subtle transition-colors mb-5"
       >
         <ArrowLeftIcon className="w-5 h-5 text-viridian" />
         <span>{t(lang, "backHome")}</span>
@@ -59,7 +61,13 @@ export const UnsureView: React.FC<UnsureViewProps> = ({
 
       <div className="bg-surface border border-seam rounded-2xl p-6 shadow-sm">
         <div className="flex items-start justify-between gap-4 mb-2">
-          <h1 className="text-2xl font-bold text-ink">{t(lang, "unsureTitle")}</h1>
+          <h1
+            ref={headingRef}
+            tabIndex={-1}
+            className="text-2xl font-bold text-ink focus:outline-none"
+          >
+            {t(lang, "unsureTitle")}
+          </h1>
           {messageAudioUrl && (
             <button
               type="button"
